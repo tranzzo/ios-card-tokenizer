@@ -8,8 +8,18 @@
 
 /* Begin PBXBuildFile section */
 		CE4C74F42301584E00D46438 /* widget_light_sdk.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE4C74EA2301584E00D46438 /* widget_light_sdk.framework */; };
-		CE4C74F92301584E00D46438 /* widget_light_sdkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4C74F82301584E00D46438 /* widget_light_sdkTests.swift */; };
 		CE4C74FB2301584E00D46438 /* widget_light_sdk.h in Headers */ = {isa = PBXBuildFile; fileRef = CE4C74ED2301584E00D46438 /* widget_light_sdk.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CE4C750623015D0800D46438 /* Crypto.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4C750523015D0800D46438 /* Crypto.swift */; };
+		CE4C750823015DB600D46438 /* CardTokenRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4C750723015DB600D46438 /* CardTokenRequest.swift */; };
+		CE4C750A23015E2300D46438 /* UIDeviceExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4C750923015E2300D46438 /* UIDeviceExtension.swift */; };
+		CE4C750C23015E5B00D46438 /* BundleInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4C750B23015E5B00D46438 /* BundleInfo.swift */; };
+		CE4C751023015F8800D46438 /* TokenizeHttpApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4C750F23015F8800D46438 /* TokenizeHttpApi.swift */; };
+		CE4C751223015FDA00D46438 /* CardUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4C751123015FD900D46438 /* CardUtils.swift */; };
+		CE4C751623016A2E00D46438 /* CommonUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4C751523016A2E00D46438 /* CommonUtils.swift */; };
+		CE4C75182301984900D46438 /* UrlSessionExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4C75172301984900D46438 /* UrlSessionExtension.swift */; };
+		CE4C75222301DF4500D46438 /* UtilsTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4C75212301DF4500D46438 /* UtilsTest.swift */; };
+		CE4C75242301EBAC00D46438 /* CryptoTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4C75232301EBAC00D46438 /* CryptoTest.swift */; };
+		CE4C75262301EFD100D46438 /* TokenizeHttpApiTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4C75252301EFD100D46438 /* TokenizeHttpApiTest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -27,9 +37,19 @@
 		CE4C74ED2301584E00D46438 /* widget_light_sdk.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = widget_light_sdk.h; sourceTree = "<group>"; };
 		CE4C74EE2301584E00D46438 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CE4C74F32301584E00D46438 /* widget-light-sdkTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "widget-light-sdkTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		CE4C74F82301584E00D46438 /* widget_light_sdkTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = widget_light_sdkTests.swift; sourceTree = "<group>"; };
 		CE4C74FA2301584E00D46438 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CE4C750423015ADD00D46438 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		CE4C750523015D0800D46438 /* Crypto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Crypto.swift; sourceTree = "<group>"; };
+		CE4C750723015DB600D46438 /* CardTokenRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardTokenRequest.swift; sourceTree = "<group>"; };
+		CE4C750923015E2300D46438 /* UIDeviceExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIDeviceExtension.swift; sourceTree = "<group>"; };
+		CE4C750B23015E5B00D46438 /* BundleInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BundleInfo.swift; sourceTree = "<group>"; };
+		CE4C750F23015F8800D46438 /* TokenizeHttpApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenizeHttpApi.swift; sourceTree = "<group>"; };
+		CE4C751123015FD900D46438 /* CardUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardUtils.swift; sourceTree = "<group>"; };
+		CE4C751523016A2E00D46438 /* CommonUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonUtils.swift; sourceTree = "<group>"; };
+		CE4C75172301984900D46438 /* UrlSessionExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UrlSessionExtension.swift; sourceTree = "<group>"; };
+		CE4C75212301DF4500D46438 /* UtilsTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UtilsTest.swift; sourceTree = "<group>"; };
+		CE4C75232301EBAC00D46438 /* CryptoTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoTest.swift; sourceTree = "<group>"; };
+		CE4C75252301EFD100D46438 /* TokenizeHttpApiTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenizeHttpApiTest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +94,14 @@
 			isa = PBXGroup;
 			children = (
 				CE4C74ED2301584E00D46438 /* widget_light_sdk.h */,
+				CE4C750723015DB600D46438 /* CardTokenRequest.swift */,
+				CE4C750923015E2300D46438 /* UIDeviceExtension.swift */,
+				CE4C750B23015E5B00D46438 /* BundleInfo.swift */,
+				CE4C750F23015F8800D46438 /* TokenizeHttpApi.swift */,
+				CE4C75172301984900D46438 /* UrlSessionExtension.swift */,
+				CE4C751123015FD900D46438 /* CardUtils.swift */,
+				CE4C751523016A2E00D46438 /* CommonUtils.swift */,
+				CE4C750523015D0800D46438 /* Crypto.swift */,
 				CE4C74EE2301584E00D46438 /* Info.plist */,
 			);
 			path = "widget-light-sdk";
@@ -82,7 +110,9 @@
 		CE4C74F72301584E00D46438 /* widget-light-sdkTests */ = {
 			isa = PBXGroup;
 			children = (
-				CE4C74F82301584E00D46438 /* widget_light_sdkTests.swift */,
+				CE4C75212301DF4500D46438 /* UtilsTest.swift */,
+				CE4C75232301EBAC00D46438 /* CryptoTest.swift */,
+				CE4C75252301EFD100D46438 /* TokenizeHttpApiTest.swift */,
 				CE4C74FA2301584E00D46438 /* Info.plist */,
 			);
 			path = "widget-light-sdkTests";
@@ -150,6 +180,7 @@
 				TargetAttributes = {
 					CE4C74E92301584E00D46438 = {
 						CreatedOnToolsVersion = 10.3;
+						LastSwiftMigration = 1030;
 					};
 					CE4C74F22301584E00D46438 = {
 						CreatedOnToolsVersion = 10.3;
@@ -196,6 +227,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE4C75182301984900D46438 /* UrlSessionExtension.swift in Sources */,
+				CE4C750A23015E2300D46438 /* UIDeviceExtension.swift in Sources */,
+				CE4C750C23015E5B00D46438 /* BundleInfo.swift in Sources */,
+				CE4C750623015D0800D46438 /* Crypto.swift in Sources */,
+				CE4C750823015DB600D46438 /* CardTokenRequest.swift in Sources */,
+				CE4C751223015FDA00D46438 /* CardUtils.swift in Sources */,
+				CE4C751623016A2E00D46438 /* CommonUtils.swift in Sources */,
+				CE4C751023015F8800D46438 /* TokenizeHttpApi.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -203,7 +242,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CE4C74F92301584E00D46438 /* widget_light_sdkTests.swift in Sources */,
+				CE4C75242301EBAC00D46438 /* CryptoTest.swift in Sources */,
+				CE4C75262301EFD100D46438 /* TokenizeHttpApiTest.swift in Sources */,
+				CE4C75222301DF4500D46438 /* UtilsTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -344,6 +385,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				APPLICATION_EXTENSION_API_ONLY = NO;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
@@ -362,6 +404,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "tranzzo.widget-light-sdk";
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -371,6 +414,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				APPLICATION_EXTENSION_API_ONLY = NO;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
@@ -397,6 +441,7 @@
 		CE4C75022301584E00D46438 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = DW5R2L25P8;
 				INFOPLIST_FILE = "widget-light-sdkTests/Info.plist";
@@ -415,6 +460,7 @@
 		CE4C75032301584E00D46438 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = DW5R2L25P8;
 				INFOPLIST_FILE = "widget-light-sdkTests/Info.plist";
