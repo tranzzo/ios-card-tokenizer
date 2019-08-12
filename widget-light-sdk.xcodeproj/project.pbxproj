@@ -29,6 +29,7 @@
 		CE4C74F32301584E00D46438 /* widget-light-sdkTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "widget-light-sdkTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE4C74F82301584E00D46438 /* widget_light_sdkTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = widget_light_sdkTests.swift; sourceTree = "<group>"; };
 		CE4C74FA2301584E00D46438 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CE4C750423015ADD00D46438 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +54,7 @@
 		CE4C74E02301584E00D46438 = {
 			isa = PBXGroup;
 			children = (
+				CE4C750423015ADD00D46438 /* README.md */,
 				CE4C74EC2301584E00D46438 /* widget-light-sdk */,
 				CE4C74F72301584E00D46438 /* widget-light-sdkTests */,
 				CE4C74EB2301584E00D46438 /* Products */,
