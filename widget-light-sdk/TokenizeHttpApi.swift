@@ -12,9 +12,10 @@ public struct TokenSuccessResponse: Codable {
     public let cardMask: String
 }
 
-public struct TokenErrorResponse: Codable {
-    public let id: String
-    public let hint: String?
+class Constants {
+    static let defaultAlertTitle = "warning"
+    static let errorAlertTitle = "Error"
+    static let genericErrorMessage = "Something went wrong, please try again."
 }
 
 
@@ -32,27 +33,43 @@ public enum Environment: String {
     }
 }
 
+class TokenApiError: Error {
+    var title = ""
+    var message = ""
+    var id = ""
+    var hint = ""
+    
+    init(id: String, hint: String) {
+        self.id = id
+        self.hint = hint
+    }
+    
+    init(title: String, message: String) {
+        self.title = title
+        self.message = message
+    }
+    
+}
+
+struct TokenErrorResponse: Codable {
+    let id: String
+    let hint: String?
+}
 
 class TranzzoTokenizeApi {
     let apiToken: String
     let env: Environment
     private let utils = CommonUtils()
     private let urlSession = URLSession.shared
-    
-    enum APIError: Error {
-        case TokenErrorResponse
-        case jsonDecodingError(error: Error)
-        case networkError(error: Error)
-    }
-    
+
     init(apiToken: String, env: Environment) {
         self.apiToken = apiToken
         self.env = env
     }
     
     
-    private func fetch<T: Decodable>(card: CardTokenRequest,
-                                     completionHandler: @escaping (Result<T, APIError>) -> Void) {
+    private func fetch<T>(card: CardTokenRequest,
+                          completionHandler: @escaping (Result<T, TokenApiError>) -> Void) where T: Codable {
         let baseUrl = env.baseURL
         let url = URL(string: "\(baseUrl)/api/v1/sdk/tokenize")!
         let serializeData: String = utils.stringBuilder(params: card)!
@@ -69,31 +86,39 @@ class TranzzoTokenizeApi {
         urlSession.dataTask(with: request) { (result) in
             switch result {
             case .success(let (response, data)):
-                guard let statusCode = (response as? HTTPURLResponse)?.statusCode, 200..<299 ~= statusCode else {
-                    DispatchQueue.main.async {
-                        completionHandler(.failure(.TokenErrorResponse))
-                    }
-                    return
-                }
                 do {
+                    guard let statusCode = (response as? HTTPURLResponse)?.statusCode, 200..<299 ~= statusCode else {
+                        DispatchQueue.main.async {
+                            completionHandler(.failure(self.parseApiError(data: data)!))
+                        }
+                        return
+                    }
+                    
                     let jsonResponse = try self.utils.jsonDecoder.decode(T.self, from: data)
+                    
                     DispatchQueue.main.async {
                         completionHandler(.success(jsonResponse))
                     }
                     
                 } catch let error {
-                    completionHandler(.failure(.jsonDecodingError(error: error)))
+                    completionHandler(.failure(TokenApiError(title: Constants.errorAlertTitle, message: error.localizedDescription)))
                 }
             case .failure(let error):
-                completionHandler(.failure(.networkError(error: error)))
+                completionHandler(.failure(TokenApiError(title: Constants.genericErrorMessage, message: error.localizedDescription)))
             }
         }.resume()
-        
-        
     }
     
+    
     public func tokenize(card: CardTokenRequest,
-                  result: @escaping (Result<TokenSuccessResponse, APIError>) -> Void) {
+                  result: @escaping (Result<TokenSuccessResponse, TokenApiError>) -> Void) {
         fetch(card: card, completionHandler: result)
+    }
+    
+    private func parseApiError(data: Data?) -> TokenApiError? {
+        if let jsonData = data, let error = try? self.utils.jsonDecoder.decode(TokenErrorResponse.self, from: jsonData) {
+            return TokenApiError(id: error.id, hint: error.hint ?? "")
+        }
+        return nil
     }
 }
