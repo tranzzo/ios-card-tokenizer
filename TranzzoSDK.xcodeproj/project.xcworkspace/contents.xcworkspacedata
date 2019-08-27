@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:widget-light-sdk.xcodeproj">
+      location = "self:/Users/user/work/widget-light-sdk/TranzzoSDK.xcodeproj">
    </FileRef>
 </Workspace>
