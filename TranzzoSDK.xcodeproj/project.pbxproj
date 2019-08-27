@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		CE4C74F42301584E00D46438 /* widget_light_sdk.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE4C74EA2301584E00D46438 /* widget_light_sdk.framework */; };
-		CE4C74FB2301584E00D46438 /* widget_light_sdk.h in Headers */ = {isa = PBXBuildFile; fileRef = CE4C74ED2301584E00D46438 /* widget_light_sdk.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CE4C74F42301584E00D46438 /* TranzzoSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE4C74EA2301584E00D46438 /* TranzzoSDK.framework */; };
+		CE4C74FB2301584E00D46438 /* TranzzoSDK.h in Headers */ = {isa = PBXBuildFile; fileRef = CE4C74ED2301584E00D46438 /* TranzzoSDK.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CE4C750623015D0800D46438 /* Crypto.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4C750523015D0800D46438 /* Crypto.swift */; };
 		CE4C750823015DB600D46438 /* CardTokenRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4C750723015DB600D46438 /* CardTokenRequest.swift */; };
 		CE4C750A23015E2300D46438 /* UIDeviceExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4C750923015E2300D46438 /* UIDeviceExtension.swift */; };
@@ -33,10 +33,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		CE4C74EA2301584E00D46438 /* widget_light_sdk.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = widget_light_sdk.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		CE4C74ED2301584E00D46438 /* widget_light_sdk.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = widget_light_sdk.h; sourceTree = "<group>"; };
+		CE4C74EA2301584E00D46438 /* TranzzoSDK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = TranzzoSDK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CE4C74ED2301584E00D46438 /* TranzzoSDK.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TranzzoSDK.h; sourceTree = "<group>"; };
 		CE4C74EE2301584E00D46438 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		CE4C74F32301584E00D46438 /* widget-light-sdkTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "widget-light-sdkTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CE4C74F32301584E00D46438 /* TranzzoSDKTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TranzzoSDKTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE4C74FA2301584E00D46438 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CE4C750423015ADD00D46438 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		CE4C750523015D0800D46438 /* Crypto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Crypto.swift; sourceTree = "<group>"; };
@@ -64,7 +64,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CE4C74F42301584E00D46438 /* widget_light_sdk.framework in Frameworks */,
+				CE4C74F42301584E00D46438 /* TranzzoSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -75,8 +75,8 @@
 			isa = PBXGroup;
 			children = (
 				CE4C750423015ADD00D46438 /* README.md */,
-				CE4C74EC2301584E00D46438 /* widget-light-sdk */,
-				CE4C74F72301584E00D46438 /* widget-light-sdkTests */,
+				CE4C74EC2301584E00D46438 /* TranzzoSDK */,
+				CE4C74F72301584E00D46438 /* TranzzoSDKTests */,
 				CE4C74EB2301584E00D46438 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -84,16 +84,16 @@
 		CE4C74EB2301584E00D46438 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				CE4C74EA2301584E00D46438 /* widget_light_sdk.framework */,
-				CE4C74F32301584E00D46438 /* widget-light-sdkTests.xctest */,
+				CE4C74EA2301584E00D46438 /* TranzzoSDK.framework */,
+				CE4C74F32301584E00D46438 /* TranzzoSDKTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		CE4C74EC2301584E00D46438 /* widget-light-sdk */ = {
+		CE4C74EC2301584E00D46438 /* TranzzoSDK */ = {
 			isa = PBXGroup;
 			children = (
-				CE4C74ED2301584E00D46438 /* widget_light_sdk.h */,
+				CE4C74ED2301584E00D46438 /* TranzzoSDK.h */,
 				CE4C750723015DB600D46438 /* CardTokenRequest.swift */,
 				CE4C750923015E2300D46438 /* UIDeviceExtension.swift */,
 				CE4C750B23015E5B00D46438 /* BundleInfo.swift */,
@@ -104,10 +104,10 @@
 				CE4C750523015D0800D46438 /* Crypto.swift */,
 				CE4C74EE2301584E00D46438 /* Info.plist */,
 			);
-			path = "widget-light-sdk";
+			path = TranzzoSDK;
 			sourceTree = "<group>";
 		};
-		CE4C74F72301584E00D46438 /* widget-light-sdkTests */ = {
+		CE4C74F72301584E00D46438 /* TranzzoSDKTests */ = {
 			isa = PBXGroup;
 			children = (
 				CE4C75212301DF4500D46438 /* UtilsTest.swift */,
@@ -115,7 +115,7 @@
 				CE4C75252301EFD100D46438 /* TokenizeHttpApiTest.swift */,
 				CE4C74FA2301584E00D46438 /* Info.plist */,
 			);
-			path = "widget-light-sdkTests";
+			path = TranzzoSDKTests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -125,16 +125,16 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CE4C74FB2301584E00D46438 /* widget_light_sdk.h in Headers */,
+				CE4C74FB2301584E00D46438 /* TranzzoSDK.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		CE4C74E92301584E00D46438 /* widget-light-sdk */ = {
+		CE4C74E92301584E00D46438 /* TranzzoSDK */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = CE4C74FE2301584E00D46438 /* Build configuration list for PBXNativeTarget "widget-light-sdk" */;
+			buildConfigurationList = CE4C74FE2301584E00D46438 /* Build configuration list for PBXNativeTarget "TranzzoSDK" */;
 			buildPhases = (
 				CE4C74E52301584E00D46438 /* Headers */,
 				CE4C74E62301584E00D46438 /* Sources */,
@@ -145,14 +145,14 @@
 			);
 			dependencies = (
 			);
-			name = "widget-light-sdk";
+			name = TranzzoSDK;
 			productName = "widget-light-sdk";
-			productReference = CE4C74EA2301584E00D46438 /* widget_light_sdk.framework */;
+			productReference = CE4C74EA2301584E00D46438 /* TranzzoSDK.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		CE4C74F22301584E00D46438 /* widget-light-sdkTests */ = {
+		CE4C74F22301584E00D46438 /* TranzzoSDKTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = CE4C75012301584E00D46438 /* Build configuration list for PBXNativeTarget "widget-light-sdkTests" */;
+			buildConfigurationList = CE4C75012301584E00D46438 /* Build configuration list for PBXNativeTarget "TranzzoSDKTests" */;
 			buildPhases = (
 				CE4C74EF2301584E00D46438 /* Sources */,
 				CE4C74F02301584E00D46438 /* Frameworks */,
@@ -163,9 +163,9 @@
 			dependencies = (
 				CE4C74F62301584E00D46438 /* PBXTargetDependency */,
 			);
-			name = "widget-light-sdkTests";
+			name = TranzzoSDKTests;
 			productName = "widget-light-sdkTests";
-			productReference = CE4C74F32301584E00D46438 /* widget-light-sdkTests.xctest */;
+			productReference = CE4C74F32301584E00D46438 /* TranzzoSDKTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -187,7 +187,7 @@
 					};
 				};
 			};
-			buildConfigurationList = CE4C74E42301584E00D46438 /* Build configuration list for PBXProject "widget-light-sdk" */;
+			buildConfigurationList = CE4C74E42301584E00D46438 /* Build configuration list for PBXProject "TranzzoSDK" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -199,8 +199,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				CE4C74E92301584E00D46438 /* widget-light-sdk */,
-				CE4C74F22301584E00D46438 /* widget-light-sdkTests */,
+				CE4C74E92301584E00D46438 /* TranzzoSDK */,
+				CE4C74F22301584E00D46438 /* TranzzoSDKTests */,
 			);
 		};
 /* End PBXProject section */
@@ -253,7 +253,7 @@
 /* Begin PBXTargetDependency section */
 		CE4C74F62301584E00D46438 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = CE4C74E92301584E00D46438 /* widget-light-sdk */;
+			target = CE4C74E92301584E00D46438 /* TranzzoSDK */;
 			targetProxy = CE4C74F52301584E00D46438 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -311,7 +311,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -369,7 +369,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -393,7 +393,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "widget-light-sdk/Info.plist";
+				INFOPLIST_FILE = TranzzoSDK/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -401,12 +401,14 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "tranzzo.widget-light-sdk";
+				ONLY_ACTIVE_ARCH = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = tranzzo.TranzzoSDK;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VALID_ARCHS = "arm64 arm64e";
 			};
 			name = Debug;
 		};
@@ -422,7 +424,8 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "widget-light-sdk/Info.plist";
+				ENABLE_TESTABILITY = NO;
+				INFOPLIST_FILE = TranzzoSDK/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -430,11 +433,12 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "tranzzo.widget-light-sdk";
+				PRODUCT_BUNDLE_IDENTIFIER = tranzzo.TranzzoSDK;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VALID_ARCHS = "arm64 arm64e";
 			};
 			name = Release;
 		};
@@ -444,13 +448,13 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = DW5R2L25P8;
-				INFOPLIST_FILE = "widget-light-sdkTests/Info.plist";
+				INFOPLIST_FILE = TranzzoSDKTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "tranzzo.widget-light-sdkTests";
+				PRODUCT_BUNDLE_IDENTIFIER = tranzzo.TranzzoSDKTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -463,13 +467,13 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = DW5R2L25P8;
-				INFOPLIST_FILE = "widget-light-sdkTests/Info.plist";
+				INFOPLIST_FILE = TranzzoSDKTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "tranzzo.widget-light-sdkTests";
+				PRODUCT_BUNDLE_IDENTIFIER = tranzzo.TranzzoSDKTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -479,7 +483,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		CE4C74E42301584E00D46438 /* Build configuration list for PBXProject "widget-light-sdk" */ = {
+		CE4C74E42301584E00D46438 /* Build configuration list for PBXProject "TranzzoSDK" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				CE4C74FC2301584E00D46438 /* Debug */,
@@ -488,7 +492,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		CE4C74FE2301584E00D46438 /* Build configuration list for PBXNativeTarget "widget-light-sdk" */ = {
+		CE4C74FE2301584E00D46438 /* Build configuration list for PBXNativeTarget "TranzzoSDK" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				CE4C74FF2301584E00D46438 /* Debug */,
@@ -497,7 +501,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		CE4C75012301584E00D46438 /* Build configuration list for PBXNativeTarget "widget-light-sdkTests" */ = {
+		CE4C75012301584E00D46438 /* Build configuration list for PBXNativeTarget "TranzzoSDKTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				CE4C75022301584E00D46438 /* Debug */,

@@ -5,7 +5,7 @@
  */
 
 import XCTest
-@testable import widget_light_sdk
+@testable import TranzzoSDK
 
 class CryptoTest: XCTestCase {
     var utils = CommonUtils()

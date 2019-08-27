@@ -5,7 +5,7 @@
  */
 
 import XCTest
-@testable import widget_light_sdk
+@testable import TranzzoSDK
 
 class UtilsTest: XCTestCase {
     let utils = CommonUtils()

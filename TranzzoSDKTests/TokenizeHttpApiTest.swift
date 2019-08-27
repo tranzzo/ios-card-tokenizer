@@ -7,7 +7,7 @@
 //
 
 import XCTest
-@testable import widget_light_sdk
+@testable import TranzzoSDK
 
 class TokenizeHttpApiTest: XCTestCase {
     var api: TranzzoTokenizeApi!
@@ -26,7 +26,7 @@ class TokenizeHttpApiTest: XCTestCase {
     
     func testMakeSuccessRequest() {
         let expectation = XCTestExpectation(description: "Get token")
-        api.tokenize(card: card) { (result: Result<TokenSuccessResponse, TokenApiError>) in
+        api.tokenize(card: card) { (result: Result<TokenSuccessResponse, TranzzoAPIError>) in
             switch result {
             case .success(let cardToken):
                 print(cardToken)
@@ -46,7 +46,7 @@ class TokenizeHttpApiTest: XCTestCase {
     
     func testMakeFailureRequest() {
         let expectation = XCTestExpectation(description: "Failure token")
-        api.tokenize(card: cardNotValid) { (result: Result<TokenSuccessResponse, TokenApiError>) in
+        api.tokenize(card: cardNotValid) { (result: Result<TokenSuccessResponse, TranzzoAPIError>) in
             switch result {
             case .success:
                 XCTFail()

@@ -8,6 +8,6 @@ import Foundation
 
 extension Bundle {
     static var tranzzoSDKBundle: Bundle {
-        return Bundle(identifier: "tranzzo.widget-light-sdk")!
+        return Bundle(identifier: "tranzzo.TranzzoSDK")!
     }
 }
