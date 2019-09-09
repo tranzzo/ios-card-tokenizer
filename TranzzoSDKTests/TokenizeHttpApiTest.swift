@@ -20,7 +20,7 @@ class TokenizeHttpApiTest: XCTestCase {
         super.setUp()
         api = TranzzoTokenizeApi(apiToken: apiToken, env: .stage)
         card = CardTokenRequest(cardNumber: "4242424242424242", cardExpMonth: 11, cardExpYear: 22, cardCvv: "123")
-        cardNotValid = CardTokenRequest(cardNumber: "123", cardExpMonth: 22, cardExpYear: 22, cardCvv: "")
+        cardNotValid = CardTokenRequest(cardNumber: "4242424242424241", cardExpMonth: 22, cardExpYear: 22, cardCvv: "123")
     }
     
     
@@ -51,8 +51,8 @@ class TokenizeHttpApiTest: XCTestCase {
             case .success:
                 XCTFail()
             case .failure(let error):
-                print(error)
-                XCTAssertNotNil(error.id)
+                print("Response error: \(error)")
+                XCTAssertNotNil(error.message)
                 expectation.fulfill()
 
             }

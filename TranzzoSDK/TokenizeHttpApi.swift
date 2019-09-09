@@ -39,9 +39,10 @@ public struct TranzzoAPIError: Error {
     public var message: String?
     
     
-    public init(id: String, hint: String) {
+    public init(id: String,  message: String, hint: String?) {
         self.id = id
         self.hint = hint
+        self.message = message
     }
     
     public init(message: String) {
@@ -52,6 +53,7 @@ public struct TranzzoAPIError: Error {
 
 struct TokenErrorResponse: Codable {
     let id: String
+    let errorMessage: String
     let hint: String?
 }
 
@@ -60,7 +62,7 @@ public class TranzzoTokenizeApi {
     let env: Environment
     private let utils = CommonUtils()
     private let urlSession = URLSession.shared
-
+    
     public init(apiToken: String, env: Environment) {
         self.apiToken = apiToken
         self.env = env
@@ -86,7 +88,8 @@ public class TranzzoTokenizeApi {
             switch result {
             case .success(let (response, data)):
                 do {
-                    guard let statusCode = (response as? HTTPURLResponse)?.statusCode, 200..<299 ~= statusCode else {
+                    let statusCode = (response as? HTTPURLResponse)!.statusCode
+                    guard 200..<299 ~= statusCode else {
                         DispatchQueue.main.async {
                             completionHandler(.failure(self.parseApiError(data: data)!))
                         }
@@ -106,19 +109,19 @@ public class TranzzoTokenizeApi {
             case .failure(let error):
                 completionHandler(.failure(TranzzoAPIError(message: error.localizedDescription)))
             }
-        }.resume()
+            }.resume()
     }
     
     
     public func tokenize(card: CardTokenRequest,
-                  result: @escaping (Result<TokenSuccessResponse, TranzzoAPIError>) -> Void) {
+                         result: @escaping (Result<TokenSuccessResponse, TranzzoAPIError>) -> Void) {
         fetch(card: card, completionHandler: result)
     }
     
     private func parseApiError(data: Data?) -> TranzzoAPIError? {
         if let jsonData = data, let error = try? self.utils.jsonDecoder.decode(TokenErrorResponse.self, from: jsonData) {
-            return TranzzoAPIError(id: error.id, hint: error.hint ?? "")
+            return TranzzoAPIError(id: error.id, message: error.errorMessage, hint: error.hint ?? "")
         }
-        return nil
+        return TranzzoAPIError(message: Constants.genericErrorMessage)
     }
 }
