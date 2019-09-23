@@ -8,8 +8,10 @@ import Foundation
 
 public struct TokenSuccessResponse: Codable {
     public let token: String
-    public let expiresAt: String
-    public let cardMask: String
+}
+
+public struct TokenEncryptSuccessResponse: Codable {
+    public let data: String
 }
 
 class Constants {
@@ -115,6 +117,11 @@ public class TranzzoTokenizeApi {
     
     public func tokenize(card: CardTokenRequest,
                          result: @escaping (Result<TokenSuccessResponse, TranzzoAPIError>) -> Void) {
+        fetch(card: card, completionHandler: result)
+    }
+    
+    public func tokenizeEncrypt(card: CardTokenRequest,
+                                result: @escaping (Result<TokenEncryptSuccessResponse, TranzzoAPIError>) -> Void) {
         fetch(card: card, completionHandler: result)
     }
     
