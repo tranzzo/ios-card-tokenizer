@@ -32,9 +32,6 @@ class TokenizeHttpApiTest: XCTestCase {
                 print(cardToken)
                 XCTAssertNotNil(cardToken)
                 XCTAssertNotNil(cardToken.token)
-                XCTAssertNotNil(cardToken.expiresAt)
-                XCTAssertNotNil(cardToken.cardMask)
-                XCTAssertEqual("424242******4242", cardToken.cardMask)
                 expectation.fulfill()
             case .failure(let error):
                 print(error.localizedDescription)
@@ -43,6 +40,25 @@ class TokenizeHttpApiTest: XCTestCase {
         
         wait(for: [expectation], timeout: 3.0)
     }
+
+
+    func testMakeEncryptSuccessRequest() {
+        let expectation = XCTestExpectation(description: "Get encrypted token")
+        api.tokenizeEncrypt(card: card) { (result: Result<TokenEncryptSuccessResponse, TranzzoAPIError>) in
+            switch result {
+            case .success(let cardToken):
+                print(cardToken)
+                XCTAssertNotNil(cardToken)
+                XCTAssertNotNil(cardToken.data)
+                expectation.fulfill()
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
+        }
+        
+        wait(for: [expectation], timeout: 3.0)
+    }
+    
     
     func testMakeFailureRequest() {
         let expectation = XCTestExpectation(description: "Failure token")
