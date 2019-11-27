@@ -19,8 +19,8 @@ class TokenizeHttpApiTest: XCTestCase {
     override func setUp() {
         super.setUp()
         api = TranzzoTokenizeApi(apiToken: apiToken, env: .stage)
-        card = CardTokenRequest(cardNumber: "4242424242424242", cardExpMonth: 11, cardExpYear: 22, cardCvv: "123")
-        cardNotValid = CardTokenRequest(cardNumber: "4242424242424241", cardExpMonth: 22, cardExpYear: 22, cardCvv: "123")
+        card = CardTokenRequest(cardNumber: "4242424242424242", cardExpMonth: 11, cardExpYear: 22, cardCvv: "123", rich: true)
+        cardNotValid = CardTokenRequest(cardNumber: "4242424242424241", cardExpMonth: 22, cardExpYear: 22, cardCvv: "123", rich: true)
     }
     
     

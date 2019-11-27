@@ -11,6 +11,7 @@ public struct CardTokenRequest: Codable {
     public var cardExpMonth: Int
     public var cardExpYear: Int
     public var cardCvv: String
+    public var rich: Bool
     
     
     private let platform: String = "iOS"
@@ -30,10 +31,11 @@ public struct CardTokenRequest: Codable {
     private let appName: String = UIDevice.appName
     private let appPackage: String = "app_package"
     
-    public init(cardNumber: String, cardExpMonth: Int, cardExpYear: Int, cardCvv: String) {
+    public init(cardNumber: String, cardExpMonth: Int, cardExpYear: Int, cardCvv: String, rich: Bool) {
         self.cardNumber = cardNumber
         self.cardExpMonth = cardExpMonth
         self.cardExpYear = cardExpYear
         self.cardCvv = cardCvv
+        self.rich = rich
     }
 }
