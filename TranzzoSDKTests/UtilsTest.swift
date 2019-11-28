@@ -14,6 +14,7 @@ class UtilsTest: XCTestCase {
         let b: String
         let a: String
         let c: String
+        var rich: Bool? = false
     }
 
     func testJSONDecoder() throws {
@@ -23,8 +24,8 @@ class UtilsTest: XCTestCase {
     }
 
     func testSerializeUnsortedData() {
-        let data = DataMock(b: "2", a: "1", c: "3")
-        XCTAssertEqual(utils.stringBuilder(params: data), "123")
+        let data = DataMock(b: "2", a: "1", c: "3", rich: true)
+        XCTAssertEqual(utils.stringBuilder(params: data), "123true")
     }
 }
 
@@ -32,6 +33,7 @@ private let fixture = Data("""
 {
  "a": "a",
  "b": "b",
- "c": "c"
+ "c": "c",
+ "rich": true
 }
 """.utf8)

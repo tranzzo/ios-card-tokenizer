@@ -25,10 +25,14 @@ class CommonUtils {
         guard let encodedData = try? jsonEncoder.encode(params) else { return nil }
         let dictionary = (try? JSONSerialization.jsonObject(with: encodedData, options: .allowFragments))
             .flatMap { ($0 as! [String: Any]) }
-        
+
         return dictionary!
             .sorted { $0.key < $1.key }
-            .map { (_, value) in return "\(value)" }
+            .map { (key, value) in
+                if key == "rich" {
+                    return "\(Bool(truncating: value as! NSNumber))"
+                }
+                return "\(value)" }
             .joined(separator: "")
     }
 }
