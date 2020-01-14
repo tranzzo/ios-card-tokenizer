@@ -142,11 +142,11 @@ extension UIDevice {
     }
     
     static let version: String = {
-        return Bundle.tranzzoSDKBundle.infoDictionary!["CFBundleShortVersionString"] as? String ?? ""
+        return Bundle.tranzzoSDKBundle?.infoDictionary?["CFBundleShortVersionString"] as? String ?? ""
     }()
     
     static let appName: String = {
-        return Bundle.tranzzoSDKBundle.infoDictionary!["CFBundleDisplayName"] as? String ?? ""
+        return Bundle.tranzzoSDKBundle?.infoDictionary?["CFBundleDisplayName"] as? String ?? ""
     }()
 }
 

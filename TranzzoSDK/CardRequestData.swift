@@ -19,7 +19,7 @@ public struct CardRequestData: Encodable {
     private let osVersion: String = UIDevice.current.systemVersion
     private var osBuildVersion: String = UIDevice.version
     private let osBuildNumber: String = "os_build_number"
-    private let deviceId: String = UIDevice.current.identifierForVendor!.uuidString
+    private let deviceId: String = UIDevice.current.identifierForVendor?.uuidString ?? ""
     private let deviceIp: String? = UIDevice.current.ipAddress()
     private let deviceManufacturer = "device_manufacturer"
     private let deviceBrand: String = "Apple"

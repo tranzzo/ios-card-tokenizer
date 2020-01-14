@@ -6,7 +6,7 @@
 import Foundation
 
 extension Bundle {
-    static var tranzzoSDKBundle: Bundle {
-        return Bundle(identifier: "tranzzo.TranzzoSDK")!
+    static var tranzzoSDKBundle: Bundle? {
+        return Bundle(identifier: "tranzzo.TranzzoSDK")
     }
 }

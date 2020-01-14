@@ -88,7 +88,7 @@ public class TranzzoTokenizer {
             .sorted { $0.key < $1.key }
             .map { (key, value) in
                 if key == "rich" {
-                    return "\(Bool(truncating: value as! NSNumber))"
+                    return "\(Bool(truncating: (value as? NSNumber) ?? 0))"
                 }
                 return "\(value)" }
             .joined(separator: "")
