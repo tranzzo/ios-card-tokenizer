@@ -15,10 +15,10 @@ final class TestHelpers {
     }
     
     static func createValidCardRequestData() -> CardRequestData {
-        return CardRequestData(cardNumber: "4242424242424242", cardExpMonth: 11, cardExpYear: 22, cardCvv: "123")
+        return CardRequestData(cardNumber: "4242424242424242", expirationDate: CardExpirationDate(month: 11, year: 22), cardCvv: "123")
     }
     
     static func createInvalidCardRequestData() -> CardRequestData {
-        CardRequestData(cardNumber: "4242424242424241", cardExpMonth: 22, cardExpYear: 22, cardCvv: "123")
+        CardRequestData(cardNumber: "4242424242424241", expirationDate: CardExpirationDate(month: 22, year: 22), cardCvv: "123")
     }
 }
