@@ -15,7 +15,6 @@ public struct CardData: Equatable {
     public let validCVVLength: [Int]
 }
 
-
 public enum CardType: String {
     case mastercard
     case visa
@@ -32,8 +31,7 @@ struct TRZCardFormRawData {
     public let expiryDate: String
 }
 
-
-public class CardUtils {
+public class CardProcessor {
     let cardTypes: KeyValuePairs<CardType, CardData> = [
         .visa: CardData(
             type: .visa,

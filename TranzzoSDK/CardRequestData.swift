@@ -6,14 +6,14 @@
 
 import Foundation
 
-public struct CardTokenRequest: Codable {
+public struct CardRequestData: Encodable {
     public var cardNumber: String
     public var cardExpMonth: Int
     public var cardExpYear: Int
     public var cardCvv: String
     public var rich: Bool?
     
-    
+    // Additional parameters, that have to be included to construct a proper JSON
     private let platform: String = "iOS"
     private let sdkVersion: String = UIDevice.version
     private let osVersion: String = UIDevice.current.systemVersion
