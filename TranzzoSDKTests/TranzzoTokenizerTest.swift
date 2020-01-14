@@ -1,5 +1,5 @@
 //
-//  TokenizeHttpApiTest.swift
+//  TranzzoTokenizerTest.swift
 //  widget-light-sdkTests
 //
 //  Created by Vladislav Taiurskyi on 8/12/19.
@@ -9,24 +9,23 @@
 import XCTest
 @testable import TranzzoSDK
 
-class TokenizeHttpApiTest: XCTestCase {
-    var api: TranzzoTokenizeApi!
-    var card: CardTokenRequest!
-    var cardNotValid: CardTokenRequest!
+class TranzzoTokenizerTest: XCTestCase {
+    var sut: TranzzoTokenizer!
+    var card: CardRequestData!
+    var invalidCard: CardRequestData!
 
     let apiToken = "m03z1jKTSO6zUYQN5C8xYZnIclK0plIQ/3YMgTZbV6g7kxle6ZnCaHVNv3A11UCK"
 
     override func setUp() {
         super.setUp()
-        api = TranzzoTokenizeApi(apiToken: apiToken, env: .stage)
-        card = CardTokenRequest(cardNumber: "4242424242424242", cardExpMonth: 11, cardExpYear: 22, cardCvv: "123", rich: true)
-        cardNotValid = CardTokenRequest(cardNumber: "4242424242424241", cardExpMonth: 22, cardExpYear: 22, cardCvv: "123", rich: true)
+        sut = TranzzoTokenizer(apiToken: apiToken, environment: .stage)
+        card = TestHelpers.createValidCardRequestData()
+        invalidCard = TestHelpers.createInvalidCardRequestData()
     }
-    
     
     func testMakeSuccessRequest() {
         let expectation = XCTestExpectation(description: "Get token")
-        api.tokenize(card: card) { (result: Result<TokenSuccessResponse, TranzzoAPIError>) in
+        sut.tokenize(card: card) { (result: Result<TokenSuccessResponse, TranzzoError>) in
             switch result {
             case .success(let cardToken):
                 print(cardToken)
@@ -41,10 +40,9 @@ class TokenizeHttpApiTest: XCTestCase {
         wait(for: [expectation], timeout: 3.0)
     }
 
-
     func testMakeEncryptSuccessRequest() {
         let expectation = XCTestExpectation(description: "Get encrypted token")
-        api.tokenizeEncrypt(card: card) { (result: Result<TokenEncryptSuccessResponse, TranzzoAPIError>) in
+        sut.tokenizeEncrypt(card: card) { (result: Result<TokenEncryptSuccessResponse, TranzzoError>) in
             switch result {
             case .success(let cardToken):
                 print(cardToken)
@@ -59,10 +57,9 @@ class TokenizeHttpApiTest: XCTestCase {
         wait(for: [expectation], timeout: 3.0)
     }
     
-    
     func testMakeFailureRequest() {
         let expectation = XCTestExpectation(description: "Failure token")
-        api.tokenize(card: cardNotValid) { (result: Result<TokenSuccessResponse, TranzzoAPIError>) in
+        sut.tokenize(card: invalidCard) { (result: Result<TokenSuccessResponse, TranzzoError>) in
             switch result {
             case .success:
                 XCTFail()
@@ -70,7 +67,6 @@ class TokenizeHttpApiTest: XCTestCase {
                 print("Response error: \(error)")
                 XCTAssertNotNil(error.message)
                 expectation.fulfill()
-
             }
         }
         
@@ -78,8 +74,7 @@ class TokenizeHttpApiTest: XCTestCase {
     }
 
     override func tearDown() {
-        api = nil
+        sut = nil
     }
-
 
 }

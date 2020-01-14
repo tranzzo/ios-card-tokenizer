@@ -31,12 +31,11 @@ public struct CardRequestData: Encodable {
     private let appName: String = UIDevice.appName
     private let appPackage: String = "app_package"
     
-    public init(cardNumber: String, cardExpMonth: Int, cardExpYear: Int, cardCvv: String, rich: Bool? = false) {
+    public init(cardNumber: String, cardExpMonth: Int, cardExpYear: Int, cardCvv: String) {
         self.cardNumber = cardNumber
         self.cardExpMonth = cardExpMonth
         self.cardExpYear = cardExpYear
         self.cardCvv = cardCvv
-        self.rich = rich
     }
 }
 

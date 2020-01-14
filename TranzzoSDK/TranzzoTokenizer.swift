@@ -36,13 +36,15 @@ public class TranzzoTokenizer {
     
     public func tokenizeEncrypt(card: CardRequestData,
                                 result: @escaping (Result<TokenEncryptSuccessResponse, TranzzoError>) -> Void) {
-        fetch(card: card, completionHandler: result)
+        var richCard = card
+        richCard.rich = true
+        fetch(card: richCard, completionHandler: result)
     }
     
     // MARK: - Private Methods
     private func fetch<T>(card: CardRequestData,
                           completionHandler: @escaping (Result<T, TranzzoError>) -> Void) where T: Codable {
-        let sign = self.buildBodyString(params: card)?.hmac(key: apiToken)
+        let sign = self.encoder.stringEncode(card)?.hmac(key: apiToken)
         
         if var request = URLRequestBuilder.createURLRequest(to: environment.baseURL, requestData: .tokenize(card: card)) {
             request.setValue(sign, forHTTPHeaderField: "X-Sign")
@@ -72,26 +74,6 @@ public class TranzzoTokenizer {
                 }
             }.resume()
         }
-    }
-    
-    private func buildBodyString<T: Encodable>(params: T) -> String? {
-        var dictionary: Any?
-        do {
-            let encodedData = try DataEncoder().encode(params)
-            dictionary = try JSONSerialization.jsonObject(with: encodedData, options: .allowFragments)
-
-        } catch {
-            return nil
-        }
-
-        return (dictionary as? [String: Any])?
-            .sorted { $0.key < $1.key }
-            .map { (key, value) in
-                if key == "rich" {
-                    return "\(Bool(truncating: (value as? NSNumber) ?? 0))"
-                }
-                return "\(value)" }
-            .joined(separator: "")
     }
     
     private func parseApiError(data: Data?) -> TranzzoError? {
