@@ -26,7 +26,6 @@
 		CE86F55823CCB5C900C63592 /* DataDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE86F55723CCB5C900C63592 /* DataDecoder.swift */; };
 		CECE035E23CCAB110051B826 /* TranzzoError.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECE035D23CCAB110051B826 /* TranzzoError.swift */; };
 		CECE036023CCAB2D0051B826 /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECE035F23CCAB2D0051B826 /* Environment.swift */; };
-		CECE036223CCACDD0051B826 /* ErrorResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECE036123CCACDD0051B826 /* ErrorResponse.swift */; };
 		CECE036423CCAD990051B826 /* RequestData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECE036323CCAD990051B826 /* RequestData.swift */; };
 		CECE036623CCAF8F0051B826 /* URLRequestBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECE036523CCAF8F0051B826 /* URLRequestBuilder.swift */; };
 /* End PBXBuildFile section */
@@ -66,7 +65,6 @@
 		CE86F55723CCB5C900C63592 /* DataDecoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataDecoder.swift; sourceTree = "<group>"; };
 		CECE035D23CCAB110051B826 /* TranzzoError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranzzoError.swift; sourceTree = "<group>"; };
 		CECE035F23CCAB2D0051B826 /* Environment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Environment.swift; sourceTree = "<group>"; };
-		CECE036123CCACDD0051B826 /* ErrorResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorResponse.swift; sourceTree = "<group>"; };
 		CECE036323CCAD990051B826 /* RequestData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestData.swift; sourceTree = "<group>"; };
 		CECE036523CCAF8F0051B826 /* URLRequestBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLRequestBuilder.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -121,7 +119,6 @@
 				CECE036323CCAD990051B826 /* RequestData.swift */,
 				CECE036523CCAF8F0051B826 /* URLRequestBuilder.swift */,
 				CECE035D23CCAB110051B826 /* TranzzoError.swift */,
-				CECE036123CCACDD0051B826 /* ErrorResponse.swift */,
 				CE4C750B23015E5B00D46438 /* BundleExtensions.swift */,
 				CE4C750923015E2300D46438 /* UIDeviceExtensions.swift */,
 				CE4C75172301984900D46438 /* URLSessionExtensions.swift */,
@@ -266,7 +263,6 @@
 				CECE035E23CCAB110051B826 /* TranzzoError.swift in Sources */,
 				CE4C750823015DB600D46438 /* CardRequestData.swift in Sources */,
 				CE4C751223015FDA00D46438 /* CardProcessor.swift in Sources */,
-				CECE036223CCACDD0051B826 /* ErrorResponse.swift in Sources */,
 				CE86F55423CCB2BC00C63592 /* Constants.swift in Sources */,
 				CE86F55823CCB5C900C63592 /* DataDecoder.swift in Sources */,
 				CE4C751023015F8800D46438 /* TranzzoTokenizer.swift in Sources */,

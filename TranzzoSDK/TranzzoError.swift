@@ -6,16 +6,16 @@
 
 import Foundation
 
-public struct TranzzoError: Error {
-    public var id: String?
-    public var hint: String? = ""
-    public var message: String?
-    
-    public init(id: String,  message: String, hint: String?) {
-        self.id = id
-        self.hint = hint
-        self.message = message
+public struct TranzzoError: Error, Decodable {
+    enum CodingKeys: String, CodingKey {
+      case id
+      case hint
+      case message = "errorMessage"
     }
+    
+    public var id: String?
+    public var hint: String?
+    public var message: String?
     
     public init(message: String) {
         self.message = message

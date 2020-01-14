@@ -86,10 +86,8 @@ public class TranzzoTokenizer {
     }
     
     private func parseApiError(data: Data?) -> TranzzoError? {
-        if
-            let jsonData = data,
-            let error = try? self.decoder.decode(ErrorResponse.self, from: jsonData) {
-            return TranzzoError(id: error.id, message: error.errorMessage, hint: error.hint ?? "")
+        if let jsonData = data {
+            return try? self.decoder.decode(TranzzoError.self, from: jsonData)
         }
         return TranzzoError(message: Constants.genericErrorMessage)
     }
