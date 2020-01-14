@@ -16,6 +16,9 @@ Pod::Spec.new do |s|
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'Tranzzo' => 'tranzzo.com' }
   s.source           = { :git => 'https://bitbucket.org/tranzzo/ios-widget-light-sdk.git', :tag => s.version.to_s }
+s.pod_target_xcconfig = {
+  'INFOPLIST_FILE' => '${PODS_TARGET_SRCROOT}/TranzzoSDK/Info.plist'
+}
 
   s.ios.deployment_target = '9.0'
 

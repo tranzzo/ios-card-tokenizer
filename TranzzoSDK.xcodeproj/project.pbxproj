@@ -19,6 +19,7 @@
 		CE4C75222301DF4500D46438 /* UtilsTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4C75212301DF4500D46438 /* UtilsTest.swift */; };
 		CE4C75242301EBAC00D46438 /* CryptoTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4C75232301EBAC00D46438 /* CryptoTest.swift */; };
 		CE4C75262301EFD100D46438 /* TokenizeHttpApiTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4C75252301EFD100D46438 /* TokenizeHttpApiTest.swift */; };
+		CE831AF123CDC11500259A52 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CE831AEF23CDB6AF00259A52 /* Info.plist */; };
 		CE86F55423CCB2BC00C63592 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE86F55323CCB2BC00C63592 /* Constants.swift */; };
 		CE86F55623CCB59A00C63592 /* DataEncoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE86F55523CCB59A00C63592 /* DataEncoder.swift */; };
 		CE86F55823CCB5C900C63592 /* DataDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE86F55723CCB5C900C63592 /* DataDecoder.swift */; };
@@ -233,6 +234,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE831AF123CDC11500259A52 /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
