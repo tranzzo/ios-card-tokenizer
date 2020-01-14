@@ -12,4 +12,8 @@ public extension String {
     var digitsOnly: String {
         return filter { $0.isNumber }
     }
+    
+    var containsNonDigits: Bool {
+        return !CharacterSet.decimalDigits.isSuperset(of: CharacterSet(charactersIn: self))
+    }
 }

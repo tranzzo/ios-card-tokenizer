@@ -32,6 +32,7 @@
 		CEDEA49323CE07FE001B1D80 /* CardFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDEA49223CE07FE001B1D80 /* CardFormatter.swift */; };
 		CEDEA49523CE0DAA001B1D80 /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDEA49423CE0DAA001B1D80 /* StringExtensions.swift */; };
 		CEDEA49723CE186D001B1D80 /* CardExpirationDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDEA49623CE186D001B1D80 /* CardExpirationDate.swift */; };
+		CEDEA49923CE1BCE001B1D80 /* CardValidatorTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDEA49823CE1BCE001B1D80 /* CardValidatorTest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,6 +76,7 @@
 		CEDEA49223CE07FE001B1D80 /* CardFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardFormatter.swift; sourceTree = "<group>"; };
 		CEDEA49423CE0DAA001B1D80 /* StringExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; };
 		CEDEA49623CE186D001B1D80 /* CardExpirationDate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardExpirationDate.swift; sourceTree = "<group>"; };
+		CEDEA49823CE1BCE001B1D80 /* CardValidatorTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardValidatorTest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -150,6 +152,7 @@
 				CE4C74FA2301584E00D46438 /* Info.plist */,
 				CE831AF723CDE14D00259A52 /* DataEncoderTest.swift */,
 				CE831AF923CDE17900259A52 /* TestHelpers.swift */,
+				CEDEA49823CE1BCE001B1D80 /* CardValidatorTest.swift */,
 			);
 			path = TranzzoSDKTests;
 			sourceTree = "<group>";
@@ -301,6 +304,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CE4C75242301EBAC00D46438 /* CryptoTest.swift in Sources */,
+				CEDEA49923CE1BCE001B1D80 /* CardValidatorTest.swift in Sources */,
 				CE4C75262301EFD100D46438 /* TranzzoTokenizerTest.swift in Sources */,
 				CE831AF823CDE14D00259A52 /* DataEncoderTest.swift in Sources */,
 				CE831AFA23CDE17900259A52 /* TestHelpers.swift in Sources */,

@@ -14,22 +14,32 @@ class CardValidator {
     
     // MARK: - Public Properties
     /// Determines the card provider by its number
+    /// - Note: Will remove spaces from `cardNumber`, if there are any
     ///
-    /// - parameter cardNumber:          Card number.
+    /// - parameter cardNumber:          Card number
     /// - Returns: Fetched `CardProvider`, if specified number is valid, nil otherwise.
     public func getCardType(for cardNumber: String) -> CardProvider? {
+        var filteredNumber = cardNumber
+        if filteredNumber.containsNonDigits {
+            filteredNumber = filteredNumber.digitsOnly
+        }
         return cardTypes.first {
-            cardNumber.range(of: $0.pattern, options: .regularExpression) != nil
+            filteredNumber.range(of: $0.pattern, options: .regularExpression) != nil
         }
     }
     
     /// Determines, if the card number is valid
+    /// - Note: Will remove spaces from `cardNumber`, if there are any
     ///
     /// - parameter cardNumber:          Card number to validate.
     /// - Returns: `true` if specified number is valid, `false` otherwise.
     public func isValid(cardNumber: String) -> Bool {
-        if let cardType = self.getCardType(for: cardNumber) {
-            return self.isValid(cardNumber: cardNumber, for: cardType)
+        var filteredNumber = cardNumber
+        if filteredNumber.containsNonDigits {
+            filteredNumber = filteredNumber.digitsOnly
+        }
+        if let cardType = self.getCardType(for: filteredNumber) {
+            return self.isValid(cardNumber: filteredNumber, for: cardType)
         }
         return false
     }
@@ -40,8 +50,12 @@ class CardValidator {
     /// - parameter provider:          `CardProvider`, that provides validation rules.
     /// - Returns: `true` if specified number is valid, `false` otherwise.
     public func isValid(cardNumber: String, for provider: CardProvider) -> Bool {
-        guard luhnCheck(cardNumber: cardNumber) else { return false }
-        return provider.validLength.contains { $0 == cardNumber.count }
+        var filteredNumber = cardNumber
+        if filteredNumber.containsNonDigits {
+            filteredNumber = filteredNumber.digitsOnly
+        }
+        guard luhnCheck(cardNumber: filteredNumber) else { return false }
+        return filteredNumber.range(of: provider.pattern, options: .regularExpression) != nil
     }
     
     /// Determines, if the cvv is valid for a specified provider
