@@ -1,8 +1,8 @@
 /*
- * Copyright (c) TRANZZO LTD - All Rights Reserved
- * Unauthorized copying of this file, via any medium is strictly prohibited
- * Proprietary and confidential
- */
+* Copyright (c) TRANZZO LTD - All Rights Reserved
+* Unauthorized copying of this file, via any medium is strictly prohibited
+* Proprietary and confidential
+*/
 
 import Foundation
 
@@ -11,6 +11,7 @@ public struct CardRequestData: Encodable {
     public var cardExpMonth: Int
     public var cardExpYear: Int
     public var cardCvv: String
+    /// Property, that specifies the type of token to expect from the data, should not be configured manually
     public var rich: Bool?
     
     // Additional parameters, that have to be included to construct a proper JSON

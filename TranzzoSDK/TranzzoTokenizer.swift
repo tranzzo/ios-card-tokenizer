@@ -1,8 +1,8 @@
 /*
- * Copyright (c) TRANZZO LTD - All Rights Reserved
- * Unauthorized copying of this file, via any medium is strictly prohibited
- * Proprietary and confidential
- */
+* Copyright (c) TRANZZO LTD - All Rights Reserved
+* Unauthorized copying of this file, via any medium is strictly prohibited
+* Proprietary and confidential
+*/
 
 import Foundation
 
@@ -29,11 +29,20 @@ public class TranzzoTokenizer {
     }
     
     // MARK: - Public Methods
+    /// Sends encoded `card` to Tranzzo servers
+    ///
+    /// - parameter card:          The `CardRequestData` value, make sure `rich` is set to `false`.
+    /// - parameter result:        Closure, called when token data or an error is received
+    
     public func tokenize(card: CardRequestData,
                          result: @escaping (Result<TokenSuccessResponse, TranzzoError>) -> Void) {
         fetch(card: card, completionHandler: result)
     }
     
+    /// Sends encoded and ecrypted `card` to Tranzzo servers
+    ///
+    /// - parameter card:          The `CardRequestData` value, make sure `rich` is set to `true`.
+    /// - parameter result:        Closure, called when token data or an error is received
     public func tokenizeEncrypt(card: CardRequestData,
                                 result: @escaping (Result<TokenEncryptSuccessResponse, TranzzoError>) -> Void) {
         var richCard = card
