@@ -42,7 +42,6 @@
 /* Begin PBXFileReference section */
 		CE4C74EA2301584E00D46438 /* TranzzoSDK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = TranzzoSDK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE4C74ED2301584E00D46438 /* TranzzoSDK.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TranzzoSDK.h; sourceTree = "<group>"; };
-		CE4C74EE2301584E00D46438 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CE4C74F32301584E00D46438 /* TranzzoSDKTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TranzzoSDKTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE4C74FA2301584E00D46438 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CE4C750423015ADD00D46438 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
@@ -56,6 +55,8 @@
 		CE4C75212301DF4500D46438 /* UtilsTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UtilsTest.swift; sourceTree = "<group>"; };
 		CE4C75232301EBAC00D46438 /* CryptoTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoTest.swift; sourceTree = "<group>"; };
 		CE4C75252301EFD100D46438 /* TokenizeHttpApiTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenizeHttpApiTest.swift; sourceTree = "<group>"; };
+		CE831AED23CDB30500259A52 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		CE831AEF23CDB6AF00259A52 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CE86F55323CCB2BC00C63592 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		CE86F55523CCB59A00C63592 /* DataEncoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataEncoder.swift; sourceTree = "<group>"; };
 		CE86F55723CCB5C900C63592 /* DataDecoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataDecoder.swift; sourceTree = "<group>"; };
@@ -89,6 +90,7 @@
 			isa = PBXGroup;
 			children = (
 				CE4C750423015ADD00D46438 /* README.md */,
+				CE831AED23CDB30500259A52 /* LICENSE */,
 				CE4C74EC2301584E00D46438 /* TranzzoSDK */,
 				CE4C74F72301584E00D46438 /* TranzzoSDKTests */,
 				CE4C74EB2301584E00D46438 /* Products */,
@@ -122,8 +124,8 @@
 				CE4C751123015FD900D46438 /* CardProcessor.swift */,
 				CE4C750523015D0800D46438 /* Crypto.swift */,
 				CE86F55323CCB2BC00C63592 /* Constants.swift */,
-				CE4C74EE2301584E00D46438 /* Info.plist */,
 				CE4C74ED2301584E00D46438 /* TranzzoSDK.h */,
+				CE831AEF23CDB6AF00259A52 /* Info.plist */,
 			);
 			path = TranzzoSDK;
 			sourceTree = "<group>";
@@ -422,7 +424,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "TranzzoSDK/Supporting Files/Info.plist";
+				INFOPLIST_FILE = TranzzoSDK/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -455,7 +457,7 @@
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				ENABLE_TESTABILITY = NO;
-				INFOPLIST_FILE = "TranzzoSDK/Supporting Files/Info.plist";
+				INFOPLIST_FILE = TranzzoSDK/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (

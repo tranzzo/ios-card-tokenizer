@@ -1,10 +1,8 @@
-//
-//  DataEncoder.swift
-//  TranzzoSDK
-//
-//  Created by user on 1/13/20.
-//  Copyright © 2020 Tranzzo. All rights reserved.
-//
+/*
+* Copyright (c) TRANZZO LTD - All Rights Reserved
+* Unauthorized copying of this file, via any medium is strictly prohibited
+* Proprietary and confidential
+*/
 
 import Foundation
 
