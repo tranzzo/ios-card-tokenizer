@@ -6,6 +6,7 @@
 
 import Foundation
 
+/// Errors, that can be encountered during expiration date parsing
 public enum CardExpirationDateError: Int, Error {
     case stringTooShort
     case generalParsingError
@@ -23,7 +24,7 @@ public enum CardExpirationDateError: Int, Error {
         return self.rawValue
     }
 }
-
+/// Type that encapsulates expiration date
 public struct CardExpirationDate: Equatable {
     let month: Int
     let year: Int

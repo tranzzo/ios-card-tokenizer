@@ -5,7 +5,7 @@
 */
 
 import Foundation
-
+/// Type that represents the set of data, needed to generate a card token
 public struct CardRequestData: Encodable {
     public var cardNumber: String
     public var cardExpMonth: Int
