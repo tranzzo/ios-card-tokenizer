@@ -10,8 +10,11 @@ import Foundation
 public enum CardProvider: String, CaseIterable {
     case mastercard
     case visa
+    case prostir
     case maestro
     case amex
+    case mir
+    case unionpay
     
     /// Name of a card provider
     public var name: String {
@@ -24,6 +27,12 @@ public enum CardProvider: String, CaseIterable {
             return "Maestro"
         case .amex:
             return "American Express"
+        case .prostir:
+            return "Простір"
+        case .unionpay:
+            return "UnionPay"
+        case .mir:
+            return "Мир"
         }
     }
     
@@ -37,49 +46,84 @@ public enum CardProvider: String, CaseIterable {
         case .maestro:
             return "^(?:5[06789]\\d\\d|(?!6011[0234])(?!60117[4789])(?!60118[6789])(?!60119)(?!64[456789])(?!65)6\\d{3})\\d{8,15}$"
         case .amex:
-            return "^3[47]\\d*$"
+            return "^3[47][0-9]{13}$"
+        case .unionpay:
+            return "^(62[0-9]{14,17})$"
+        case .mir:
+            return "^2"
+        case .prostir:
+            return "^9"
         }
     }
     
     /// Indeces of gaps expected in a card number for the provider
     public var gaps: [Int] {
         switch self {
-            case .visa:
+        case .visa, .maestro, .mastercard, .prostir, .mir:
                 return [4, 8, 12]
-            case .mastercard:
-                return [4, 8, 12]
-            case .maestro:
-                return [4, 8, 12]
-            case .amex:
-                return [4, 10]
+        case .amex:
+            return [4, 10]
+        case .unionpay:
+            return [4, 8, 12, 16]
         }
     }
     
     /// Valid length of a valid card number for the provider
     public var validLength: [Int] {
         switch self {
-            case .visa:
-                return [16]
-            case .mastercard:
-                return [16]
-            case .maestro:
-                return [12, 13, 14, 15, 16, 17, 18, 19]
-            case .amex:
-                return [15]
+        case .visa, .mastercard, .prostir, .mir:
+            return [16]
+        case .maestro:
+            return [12, 13, 14, 15, 16, 17, 18, 19]
+        case .amex:
+            return [15]
+        case .unionpay:
+            return [16, 20]
         }
     }
     
     /// Valid length of a valid card cvv for the provider
     public var validCVVLength: Int {
         switch self {
-            case .visa:
-                return 3
-            case .mastercard:
-                return 3
-            case .maestro:
-                return 3
-            case .amex:
-                return 4
+        case .visa, .mastercard, .prostir, .maestro, .mir, .unionpay:
+            return 3
+        case .amex:
+            return 4
         }
     }
 }
+
+//let cardTypes: KeyValuePairs<CardType, CardData> = [
+//    .visa: CardData(
+//        type: .visa,
+//        name: "Visa",
+//        pattern: "^4[0-9]{12}(?:[0-9]{3})?$",
+//        gaps: [4, 8, 12],
+//        validLength: [16],
+//        validCVVLength: [3]
+//    ),
+//    .mastercard: CardData(
+//        type: .mastercard,
+//        name: "Mastercard",
+//        pattern: "^(5[1-5]|222[1-9]|22[3-9]|2[3-6]|27[0-1]|2720)\\d*$",
+//        gaps: [4, 8, 12],
+//        validLength: [16],
+//        validCVVLength: [3]
+//    ),
+//    .maestro: CardData(
+//        type: .maestro,
+//        name: "Maestro",
+//        pattern: "^(?:5[06789]\\d\\d|(?!6011[0234])(?!60117[4789])(?!60118[6789])(?!60119)(?!64[456789])(?!65)6\\d{3})\\d{8,15}$",
+//        gaps: [4, 8, 12],
+//        validLength: [12, 13, 14, 15, 16, 17, 18, 19],
+//        validCVVLength: [3]
+//    ),
+//    .amex: CardData(
+//        type: .amex,
+//        name: "American Express",
+//        pattern: "^3[47]\\d*$",
+//        gaps: [4, 10],
+//        validLength: [14, 16, 19],
+//        validCVVLength: [4]
+//    )
+//]

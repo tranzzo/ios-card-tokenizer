@@ -23,6 +23,8 @@ class CardValidatorTest: XCTestCase {
         XCTAssertEqual(sut.getCardType(for: "5555 5555 5555 4444"), CardProvider.mastercard)
         XCTAssertEqual(sut.getCardType(for: "6759 6498 2643 8453"), CardProvider.maestro)
         XCTAssertEqual(sut.getCardType(for: "4111111111111111"), CardProvider.visa)
+        XCTAssertEqual(sut.getCardType(for: "9111111111111111"), CardProvider.prostir)
+        XCTAssertEqual(sut.getCardType(for: "2111111111111111"), CardProvider.mir)
         XCTAssertNil(sut.getCardType(for: "411111111111"))
     }
     
