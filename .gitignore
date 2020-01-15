@@ -23,10 +23,10 @@ xcuserdata
 *.xccheckout
 profile
 *.moved-aside
-*.xcuserstate
 DerivedData
 *.hmap
 *.ipa
+
 
 # CocoaPods
 Pods

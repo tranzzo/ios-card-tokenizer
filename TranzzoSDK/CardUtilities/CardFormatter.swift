@@ -29,34 +29,4 @@ final class CardFormatter {
             return "\($0)\($1)"
         }
     }
-    
-    /// Formats the expiration date string to a standard format
-    ///
-    /// - parameter expiryDate:          Input expiration date string.
-    /// - Returns: Card number, that follows formatting rules of a specified provider
-    public func formatExpiryDate(_ expiryDate: String) -> CardExpirationDate? {
-        let digitOnlyDate = expiryDate.replacingOccurrences(of: "[^0-9]", with: "", options: .regularExpression)
-        var month: Int?
-        var year: Int?
-        
-        switch digitOnlyDate.count {
-        case ...5:
-            let indexEndMonth = digitOnlyDate.index(digitOnlyDate.startIndex, offsetBy: 2)
-            month = Int(digitOnlyDate[..<indexEndMonth])
-            year = Int(digitOnlyDate[indexEndMonth...])
-        case 5...:
-            let indexEndMonth = digitOnlyDate.index(digitOnlyDate.startIndex, offsetBy: 2)
-            let indexStartYear = digitOnlyDate.index(digitOnlyDate.startIndex, offsetBy: 4)
-            month = Int(digitOnlyDate[..<indexEndMonth])
-            year = Int(digitOnlyDate[indexStartYear...])
-        default:
-            return nil
-        }
-        if let month = month, let year = year {
-            return CardExpirationDate(month: month, year: year)
-        } else {
-            return nil
-        }
-    }
-    
 }
