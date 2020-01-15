@@ -45,7 +45,15 @@ class CardValidatorTest: XCTestCase {
     }
     
     func testIsValidExpirationDate() {
-        XCTAssertTrue(sut.isValid(expirationDate: CardExpirationDate(month: 1, year: 2012)))
-        XCTAssertFalse(sut.isValid(expirationDate: CardExpirationDate(month: 0, year: 2012)))
+        let currentDate = Date()
+        let year = Calendar.current.component(.year, from: currentDate)
+        let month = Calendar.current.component(.month, from: currentDate)
+        XCTAssertFalse(sut.isValid(expirationDate: CardExpirationDate(month: 1, year: year - 8)))
+        XCTAssertFalse(sut.isValid(expirationDate: CardExpirationDate(month: 0, year: year - 8)))
+        XCTAssertFalse(sut.isValid(expirationDate: CardExpirationDate(month: month - 1, year: year)))
+        XCTAssertTrue(sut.isValid(expirationDate: CardExpirationDate(month: month + 1, year: year)))
+        XCTAssertFalse(sut.isValid(expirationDate: CardExpirationDate(month: 0, year: year)))
+        XCTAssertTrue(sut.isValid(expirationDate: CardExpirationDate(month: month + 1, year: year + 8)))
+        XCTAssertFalse(sut.isValid(expirationDate: CardExpirationDate(month: 0, year: year + 8)))
     }
 }

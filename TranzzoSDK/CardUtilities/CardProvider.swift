@@ -67,7 +67,7 @@ public enum CardProvider: String, CaseIterable {
             case .maestro:
                 return [12, 13, 14, 15, 16, 17, 18, 19]
             case .amex:
-                return [14, 16, 19]
+                return [15]
         }
     }
     

@@ -11,6 +11,7 @@ import Foundation
 class CardValidator {
     // MARK: - Private Properties
     private let cardTypes = CardProvider.allCases
+    private let calendar = Calendar.current
     
     // MARK: - Public Properties
     /// Determines the card provider by its number
@@ -73,11 +74,14 @@ class CardValidator {
     /// - parameter expirationYear:           Expiration year for a card.
     /// - Returns: `true` if specified values are valid, `false` otherwise.
     public func isValid(expirationDate: CardExpirationDate) -> Bool {
-        guard expirationDate.month > 0 else { return false }
-        guard expirationDate.year > 0 else { return false }
-        if expirationDate.month > 12 { return false }
-        
-        return true
+        let currentDate = Date()
+        let year = calendar.component(.year, from: currentDate)
+        let month = calendar.component(.month, from: currentDate)
+        if expirationDate.year == year {
+            return expirationDate.month >= month
+        } else {
+            return expirationDate.year > year && expirationDate.month > 0 && expirationDate.month <= 12
+        }
     }
     
     // MARK: - Private Properties
