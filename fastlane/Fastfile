@@ -2,6 +2,7 @@
 
 $scheme = "TranzzoSDK"
 $podspec = "/TranzzoSDK.podspec"
+$podspec = "./TranzzoSDK.podspec"
 $project = './TranzzoSDK.xcodeproj'
 #specsrepo = "https://bitbucket.org/tranzzo/ios-widget-light-sdk.git"
 
@@ -34,8 +35,6 @@ lane :submit_pod do |options|
 	end
 end
  
-desc "This does the following: "
-desc ""
 desc "- Runs the unit tests"  
 desc "- Ensures Cocoapods compatibility"  
 desc "- Bumps the patch version"  
@@ -43,8 +42,6 @@ lane :patch do
 	update(type: "patch")
 end
  
-desc "This does the following: "
-desc ""
 desc "- Runs the unit tests"  
 desc "- Ensures Cocoapods compatibility"  
 desc "- Bumps the minor version"  
@@ -52,8 +49,6 @@ lane :minor do
 	update(type: "minor")
 end  
  
-desc "This does the following: "
-desc ""
 desc "- Runs the unit tests"  
 desc "- Ensures Cocoapods compatibility"  
 desc "- Bumps the major version"  
