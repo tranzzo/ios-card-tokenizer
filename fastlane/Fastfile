@@ -1,10 +1,9 @@
 # update_fastlane
 
 $scheme = "TranzzoSDK"
-$podspec = "/TranzzoSDK.podspec"
 $podspec = "./TranzzoSDK.podspec"
 $project = './TranzzoSDK.xcodeproj'
-#specsrepo = "https://bitbucket.org/tranzzo/ios-widget-light-sdk.git"
+$specsrepo = "https://bitbucket.org/tranzzo/ios-widget-light-sdk.git"
 
 default_platform(:ios)
 
