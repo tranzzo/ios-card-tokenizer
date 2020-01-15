@@ -11,4 +11,9 @@ import Foundation
 public struct CardExpirationDate {
     let month: Int
     let year: Int
+    
+    public init(month: Int, year: Int) {
+        self.month = month
+        self.year = year
+    }
 }
