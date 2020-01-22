@@ -49,9 +49,7 @@ If you link the library manually, use a version from our [releases](https://gith
 
 ## Features
 
-**Token obtaining**: Simple way to obtain a Tranzzo user card token, generated on our servers.
-
-**Card Validation & Formatting**: Methods to make sure you operate with valid card data, that's necessary to receive a token.
+**Tokenization**: Simple way to obtain a Tranzzo user card token, generated on our servers.
 
 ## Usage
 
