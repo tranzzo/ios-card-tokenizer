@@ -1,8 +1,8 @@
 /*
- * Copyright (c) TRANZZO LTD - All Rights Reserved
- * Unauthorized copying of this file, via any medium is strictly prohibited
- * Proprietary and confidential
- */
+* Copyright (c) TRANZZO LTD - All Rights Reserved
+* Unauthorized copying of this file, via any medium is strictly prohibited
+* Proprietary and confidential
+*/
 
 import UIKit
 
@@ -91,6 +91,9 @@ extension UIDevice {
             case "iPhone11,2":                              return "iPhone XS"
             case "iPhone11,4", "iPhone11,6":                return "iPhone XS Max"
             case "iPhone11,8":                              return "iPhone XR"
+            case "iPhone12,1":                              return "iPhone 11"
+            case "iPhone12,3":                              return "iPhone 11 Pro"
+            case "iPhone12,5":                              return "iPhone 11 Pro Max"
             case "iPad2,1", "iPad2,2", "iPad2,3", "iPad2,4":return "iPad 2"
             case "iPad3,1", "iPad3,2", "iPad3,3":           return "iPad 3"
             case "iPad3,4", "iPad3,5", "iPad3,6":           return "iPad 4"
@@ -139,11 +142,11 @@ extension UIDevice {
     }
     
     static let version: String = {
-        return Bundle.tranzzoSDKBundle.infoDictionary!["CFBundleShortVersionString"] as? String ?? ""
+        return Bundle.tranzzoSDKBundle?.infoDictionary?["CFBundleShortVersionString"] as? String ?? ""
     }()
     
     static let appName: String = {
-        return Bundle.tranzzoSDKBundle.infoDictionary!["CFBundleDisplayName"] as? String ?? ""
+        return Bundle.tranzzoSDKBundle?.infoDictionary?["CFBundleDisplayName"] as? String ?? ""
     }()
 }
 

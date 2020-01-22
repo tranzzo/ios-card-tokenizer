@@ -1,14 +1,14 @@
 /*
- * Copyright (c) TRANZZO LTD - All Rights Reserved
- * Unauthorized copying of this file, via any medium is strictly prohibited
- * Proprietary and confidential
- */
+* Copyright (c) TRANZZO LTD - All Rights Reserved
+* Unauthorized copying of this file, via any medium is strictly prohibited
+* Proprietary and confidential
+*/
 
 import Foundation
 import CommonCrypto
 
 extension String {
-    func hmac (key: String) -> String {
+    func hmac(key: String) -> String {
         let str = self.cString(using: String.Encoding.utf8)
         let strLen = Int(self.lengthOfBytes(using: String.Encoding.utf8))
         let digestLen = Int(CC_SHA256_DIGEST_LENGTH)
