@@ -75,7 +75,9 @@ If you link the library manually, use a version from our [releases](https://gith
         cardCvv: "123"
     )
     ```
+    
 4. Send a request through a tokenizer to receive a token for your card 
+
     ```swift
     tokenizer.tokenize(card: card) { (result: Result<TokenSuccessResponse, TranzzoError>) in
         switch result {
