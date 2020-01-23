@@ -43,10 +43,6 @@ $ carthage update
 
 Then drag TranzzoSDK.framework into your Xcode project.
 
-### Manually
-
-If you link the library manually, use a version from our [releases](https://github.com/tranzzo/tranzzo-ios/releases) page.
-
 ## Features
 
 **Tokenization**: Simple way to obtain a Tranzzo user card token, generated on our servers.
@@ -64,14 +60,15 @@ If you link the library manually, use a version from our [releases](https://gith
     ```swift
     let tokenizer = TranzzoTokenizer(apiToken: <#appToken#>, environment: <#environment#>)
     ```
-    Make sure to replace `appToken` with your application token. Find it [here](https://tranzzo.com).
+    Make sure to replace `appToken` with your application token.
     
 3. Construct a card data with your user's card information
     
     ```swift
     let card = CardRequestData(
         cardNumber: "4242424242424242",
-        expirationDate: CardExpirationDate(month: 12, year: 22),
+        cardExpMonth: 12
+        cardExpYear: 22,
         cardCvv: "123"
     )
     ```
