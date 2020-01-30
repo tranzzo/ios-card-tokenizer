@@ -24,10 +24,6 @@ Push the repo to remote and submits the Pod to the given spec repository. Do thi
 ```
 fastlane patch
 ```
-This does the following: 
-
-
-
 - Runs the unit tests
 
 - Ensures Cocoapods compatibility
@@ -37,10 +33,6 @@ This does the following:
 ```
 fastlane minor
 ```
-This does the following: 
-
-
-
 - Runs the unit tests
 
 - Ensures Cocoapods compatibility
@@ -50,10 +42,6 @@ This does the following:
 ```
 fastlane major
 ```
-This does the following: 
-
-
-
 - Runs the unit tests
 
 - Ensures Cocoapods compatibility
