@@ -1,10 +1,9 @@
-#  TranzzoSDK Tokenizer
+#  Tranzzo Tokenizer
 
-![CocoaPods Compatible](https://img.shields.io/cocoapods/v/TranzzoSDK.svg)
+![CocoaPods Compatible](https://img.shields.io/cocoapods/v/TranzzoTokenizer.svg)
 [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
-[![License](https://img.shields.io/cocoapods/l/TranzzoSDK.svg?style=flat)](https://github.com/tranzzo/tranzzo-ios/blob/master/LICENSE)
-[![Platform](https://img.shields.io/cocoapods/p/Stripe.svg?style=flat)](https://github.com/tranzzo/tranzzo-ios#)
-![Twitter](https://img.shields.io/badge/twitter-@TranzzoEU-blue.svg)
+[![License](https://img.shields.io/cocoapods/l/TranzzoTokenizer.svg?style=flat)](https://github.com/tranzzo/ios-card-tokenizer/blob/dev/LICENSE)
+[![Platform](https://img.shields.io/cocoapods/p/TranzzoTokenizer.svg?style=flat)](https://github.com/tranzzo/ios-card-tokenizer#)
 
 ## Requirements
 
@@ -15,10 +14,10 @@
 
 ### CocoaPods
 
-To integrate TranzzoSDK into your Xcode project using [CocoaPods](https://cocoapods.org), add it to your `Podfile`:
+To integrate TranzzoTokenizer into your Xcode project using [CocoaPods](https://cocoapods.org), add it to your `Podfile`:
 
 ```ruby
-pod 'TranzzoSDK'
+pod 'TranzzoTokenizer'
 ```
 
 Then, run the following command:
@@ -29,10 +28,10 @@ $ pod install
 
 ### Carthage
 
-To integrate TranzzoSDK into your Xcode project using [Carthage](https://github.com/Carthage/Carthage), add it to your `Cartfile`:
+To integrate TranzzoTokenizer into your Xcode project using [Carthage](https://github.com/Carthage/Carthage), add it to your `Cartfile`:
 
 ```
-binary "https://bitbucket.org/tranzzo/ios-widget-light-sdk.git"
+binary "https://github.com/tranzzo/ios-card-tokenizer.git"
 ```
 
 Then, run the following command:
@@ -41,26 +40,31 @@ Then, run the following command:
 $ carthage update
 ```
 
-Then drag TranzzoSDK.framework into your Xcode project.
+Then drag TranzzoTokenizer.framework into your Xcode project.
 
 ## Features
 
 **Tokenization**: Simple way to obtain a Tranzzo user card token, generated on our servers.
+    For more information visit our [**documentation**](https://cdn.tranzzo.com/tranzzo-api/index.html)
 
 ## Usage
 
-1. Import TranzzoSDK framework header
+1. Import TranzzoTokenizer framework header
 
     ```swift
-    import TranzzoSDK
+    import TranzzoTokenizer
     ```
 
 2. Initialize the tokenizer for an environment you are working with
     
     ```swift
-    let tokenizer = TranzzoTokenizer(apiToken: <#appToken#>, environment: <#environment#>)
+    let tokenizer = TranzzoTokenizer(apiKey: apiKey, environment: environment)
     ```
-    Make sure to replace `appToken` with your application token.
+    Make sure to replace `appKey` with your application key. 
+    If you are already using [Tranzzo Widget](https://cdn.tranzzo.com/tranzzo-api/index.html#widget-checkout) then you can use `key` parameter value.
+    Otherwise, contact our integration team to obtain one to become beta-tester.
+    
+    Choose your `environment` depending on your needs. If you need to test your workflow in a SandBox mode, you should use `.stage`
     
 3. Construct a card data with your user's card information
     
@@ -85,3 +89,4 @@ Then drag TranzzoSDK.framework into your Xcode project.
         }
     }
     ```
+
