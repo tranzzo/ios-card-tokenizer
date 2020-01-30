@@ -5,7 +5,7 @@
  */
 
 import XCTest
-@testable import TranzzoSDK
+@testable import TranzzoTokenizer
 
 class CryptoTest: XCTestCase {
     func testHmacSign() {

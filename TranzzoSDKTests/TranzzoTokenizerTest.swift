@@ -5,7 +5,7 @@
 */
 
 import XCTest
-@testable import TranzzoSDK
+@testable import TranzzoTokenizer
 
 class TranzzoTokenizerTest: XCTestCase {
     var sut: TranzzoTokenizer!
@@ -16,7 +16,7 @@ class TranzzoTokenizerTest: XCTestCase {
 
     override func setUp() {
         super.setUp()
-        sut = TranzzoTokenizer(apiToken: apiToken, environment: .stage)
+        sut = TranzzoTokenizer(apiKey: apiToken, environment: .stage)
         card = TestHelpers.createValidCardRequestData()
         invalidCard = TestHelpers.createInvalidCardRequestData()
     }

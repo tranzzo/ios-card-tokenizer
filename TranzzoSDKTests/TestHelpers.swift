@@ -5,7 +5,7 @@
 */
 
 import Foundation
-@testable import TranzzoSDK
+@testable import TranzzoTokenizer
 
 final class TestHelpers {
     struct MockRequstData: Encodable {

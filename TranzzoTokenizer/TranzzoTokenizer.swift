@@ -16,15 +16,17 @@ public struct TranzzoTokenDataSuccess: Codable {
 
 public class TranzzoTokenizer {
     // MARK: - Private Properties
-    private let apiToken: String
+    private let apiKey: String
     private let environment: Environment
     private let urlSession = URLSession.shared
     private let decoder = DataDecoder()
     private let encoder = DataEncoder()
     
     // MARK: - Init
-    public init(apiToken: String, environment: Environment) {
-        self.apiToken = apiToken
+    /// - parameter apiKey: Merchant's unique key, used for authorization purposes
+    /// - parameter environment: Use `.stage` to test the workflow without affecting real values, use `.prod` for release versions.
+    public init(apiKey: String, environment: Environment) {
+        self.apiKey = apiKey
         self.environment = environment
     }
     
@@ -53,11 +55,11 @@ public class TranzzoTokenizer {
     // MARK: - Private Methods
     private func fetch<T>(card: CardRequestData,
                           completionHandler: @escaping (Result<T, TranzzoTokenError>) -> Void) where T: Codable {
-        let sign = self.encoder.stringEncode(card)?.hmac(key: apiToken)
+        let sign = self.encoder.stringEncode(card)?.hmac(key: apiKey)
         
         if var request = URLRequestBuilder.createURLRequest(to: environment.baseURL, requestData: .tokenize(card: card)) {
             request.setValue(sign, forHTTPHeaderField: "X-Sign")
-            request.setValue(apiToken, forHTTPHeaderField: "X-Widget-Id")
+            request.setValue(apiKey, forHTTPHeaderField: "X-Widget-Id")
             request.httpBody = try? encoder.encode(card)
             
             urlSession.dataTask(with: request) { (result) in
