@@ -71,7 +71,7 @@ Then drag TranzzoTokenizer.framework into your Xcode project.
     ```swift
     let card = CardRequestData(
         cardNumber: "4242424242424242",
-        cardExpMonth: 12
+        cardExpMonth: 12,
         cardExpYear: 22,
         cardCvv: "123"
     )
