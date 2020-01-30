@@ -6,7 +6,7 @@
 
 import Foundation
 
-public struct TranzzoError: Error, Decodable {
+public struct TranzzoTokenError: Error, Decodable {
     enum CodingKeys: String, CodingKey {
       case id
       case hint

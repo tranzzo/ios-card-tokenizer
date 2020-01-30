@@ -76,7 +76,7 @@ Then drag TranzzoSDK.framework into your Xcode project.
 4. Send a request through a tokenizer to receive a token for your card 
 
     ```swift
-    tokenizer.tokenize(card: card) { (result: Result<TokenSuccessResponse, TranzzoError>) in
+    tokenizer.tokenize(card: card) { (result: Result<TranzzoTokenSuccess, TranzzoError>) in
         switch result {
         case .success(let tokenData):
             // Process your token

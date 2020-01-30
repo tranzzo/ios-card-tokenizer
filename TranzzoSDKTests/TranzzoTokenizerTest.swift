@@ -23,7 +23,7 @@ class TranzzoTokenizerTest: XCTestCase {
     
     func testMakeSuccessRequest() {
         let expectation = XCTestExpectation(description: "Get token")
-        sut.tokenize(card: card) { (result: Result<TokenSuccessResponse, TranzzoError>) in
+        sut.tokenize(card: card) { (result: Result<TranzzoTokenSuccess, TranzzoTokenError>) in
             switch result {
             case .success(let cardToken):
                 print(cardToken)
@@ -40,7 +40,7 @@ class TranzzoTokenizerTest: XCTestCase {
 
     func testMakeEncryptSuccessRequest() {
         let expectation = XCTestExpectation(description: "Get encrypted token")
-        sut.tokenizeEncrypt(card: card) { (result: Result<TokenEncryptSuccessResponse, TranzzoError>) in
+        sut.tokenizeEncrypt(card: card) { (result: Result<TranzzoTokenDataSuccess, TranzzoTokenError>) in
             switch result {
             case .success(let cardToken):
                 print(cardToken)
@@ -57,7 +57,7 @@ class TranzzoTokenizerTest: XCTestCase {
     
     func testMakeFailureRequest() {
         let expectation = XCTestExpectation(description: "Failure token")
-        sut.tokenize(card: invalidCard) { (result: Result<TokenSuccessResponse, TranzzoError>) in
+        sut.tokenize(card: invalidCard) { (result: Result<TranzzoTokenSuccess, TranzzoTokenError>) in
             switch result {
             case .success:
                 XCTFail()
