@@ -62,7 +62,7 @@ Then drag TranzzoTokenizer.framework into your Xcode project.
     ```
     Make sure to replace `appKey` with your application key. 
     If you are already using [Tranzzo Widget](https://cdn.tranzzo.com/tranzzo-api/index.html#widget-checkout) then you can use `key` parameter value.
-    Otherwise, you need to be sign up to Tranzzo Services and obtain you `appKey` from the Tranzzo dashboard.
+    Otherwise, you need to be signed up to Tranzzo Services and obtain you `appKey` from the Tranzzo dashboard.
     
     Choose your `environment` depending on your needs. If you need to test your workflow in a SandBox mode, you should use `.stage`
     
