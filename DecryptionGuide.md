@@ -25,3 +25,5 @@ Encryption is executed using these parameters
 | Algorithm      | AES-256 (AES/CBC/PKCS5Padding)                      |
 | IV length      | 128 bits (16 bytes)                                 |
 | Encryption key | `utf8_bytes(${SECRET_KEY})`                         |
+
+To get your own `SECRET_KEY` you need to be signed up to Tranzzo and have access to your dashboard, where you can generate an API secret key. For more, visit our [documentation](https://cdn.tranzzo.com/tranzzo-api/index.html#introduction).
