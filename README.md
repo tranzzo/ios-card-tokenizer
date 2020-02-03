@@ -96,7 +96,7 @@ Then drag TranzzoTokenizer.framework into your Xcode project.
     tokenizer.tokenizeEncrypt(card: card) { (result: Result<TranzzoTokenDataSuccess, TranzzoError>) in
         switch result {
         case .success(let encryptedData):
-            // Process your token
+            // Process your encrypted token data
         case .failure(let error):
             // Handle an error
         }
