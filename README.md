@@ -62,7 +62,7 @@ Then drag TranzzoTokenizer.framework into your Xcode project.
     ```
     Make sure to replace `appKey` with your application key. 
     If you are already using [Tranzzo Widget](https://cdn.tranzzo.com/tranzzo-api/index.html#widget-checkout) then you can use `key` parameter value.
-    Otherwise, contact our integration team to obtain one to become beta-tester.
+    Otherwise, you need to be signed up to Tranzzo Services and obtain you `appKey` from the Tranzzo dashboard.
     
     Choose your `environment` depending on your needs. If you need to test your workflow in a SandBox mode, you should use `.stage`
     
@@ -71,13 +71,14 @@ Then drag TranzzoTokenizer.framework into your Xcode project.
     ```swift
     let card = CardRequestData(
         cardNumber: "4242424242424242",
-        cardExpMonth: 12
+        cardExpMonth: 12,
         cardExpYear: 22,
         cardCvv: "123"
     )
     ```
     
-4. Send a request through a tokenizer to receive a token for your card 
+4. 
+    In case you want to receive a single token for your card, use this method 
 
     ```swift
     tokenizer.tokenize(card: card) { (result: Result<TranzzoTokenSuccess, TranzzoError>) in
@@ -89,4 +90,16 @@ Then drag TranzzoTokenizer.framework into your Xcode project.
         }
     }
     ```
+    If you want to receive additional card data with your token, like expiration date and card mask, use the following:
 
+    ```swift
+    tokenizer.tokenizeEncrypt(card: card) { (result: Result<TranzzoTokenDataSuccess, TranzzoError>) in
+        switch result {
+        case .success(let encryptedData):
+            // Process your encrypted token data
+        case .failure(let error):
+            // Handle an error
+        }
+    }
+    ```
+Read our [decryption guide](https://github.com/tranzzo/ios-card-tokenizer/blob/dev/DecryptionGuide.md) to learn more about `encryptedData`
