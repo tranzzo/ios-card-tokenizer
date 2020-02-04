@@ -17,7 +17,7 @@ end
 
 desc "Push the repo to remote and submits the Pod to the given spec repository. Do this after running update to ensure that tests have been run, versions bumped, and changes committed."
 lane :submit_pod do |options|
-	push_to_git_remote(local_branch: "dev", remote_branch: "dev", remote: "GitHub")
+	push_to_git_remote(local_branch: "dev", remote_branch: "dev", remote: "origin")
  
 	# If a private specs repo is defined, use that instead. Otherwise use the master repo. 
 	if $specsrepo 
