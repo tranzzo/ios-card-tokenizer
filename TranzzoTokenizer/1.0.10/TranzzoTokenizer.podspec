@@ -7,7 +7,7 @@ Pod::Spec.new do |s|
   s.homepage         = 'https://tranzzo.com'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'Tranzzo' => 'tranzzo.com' }
-  s.source           = { :git => 'https://github.com/tranzzo/ios-card-tokenizer.git', :tag => s.version.to_s }
+  s.source           = { :git => 'git@github.com:tranzzo/ios-card-tokenizer.git', :tag => s.version.to_s }
 
   s.ios.deployment_target = '9.0'
 
