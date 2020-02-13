@@ -7,6 +7,9 @@
 import Foundation
 /// Type that provides various card  formatting methods
 final public class TranzzoCardFormatter {
+  
+    public init() {}
+  
     /// Formats the card number to follow the rules of a specified provider
     ///
     /// - parameter cardNumber:          Input card number to format.

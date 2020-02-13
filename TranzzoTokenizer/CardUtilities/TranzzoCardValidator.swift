@@ -11,6 +11,8 @@ public class TranzzoCardValidator {
     private let cardTypes = CardProvider.allCases
     private let calendar = Calendar.current
     
+    public init() {}
+    
     // MARK: - Public Properties
     /// Determines the card provider by its number
     /// - Note: Will remove spaces from `cardNumber`, if there are any
