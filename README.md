@@ -111,25 +111,25 @@ Read our [decryption guide](https://github.com/tranzzo/ios-card-tokenizer/blob/d
 
 Use `TranzzoCardValidator` to validate your user's card input, such as number, cvv and expiration date.
 
-    ```swift
-      let validator = TranzzoCardValidator()
-      let numberIsValid = validator.isValid(cardNumber: cardNumber)
-    ```
+```swift
+let validator = TranzzoCardValidator()
+let numberIsValid = validator.isValid(cardNumber: cardNumber)
+```
 
 Specify `CardProvider` to validate it's cvv.
 
-    ```swift
-      let cvvIsValid = validator.isValid(cvv: "123", for: .visa)
-    ```
+```swift
+let cvvIsValid = validator.isValid(cvv: "123", for: .visa)
+```
 
 Get the provider of a card by it's full number
 
-    ```swift
-      let provider = validator.getCardType(for: "4222222222222222") // .visa
-    ```
+```swift
+let provider = validator.getCardType(for: "4222222222222222") // .visa
+```
 
 or by it's prefix (length depends on specific provider)
 
-    ```swift
-      let provider = validator.getPartialCardType(for: "5455") // .mastercard
-    ```
+```swift
+let provider = validator.getPartialCardType(for: "5455") // .mastercard
+```
