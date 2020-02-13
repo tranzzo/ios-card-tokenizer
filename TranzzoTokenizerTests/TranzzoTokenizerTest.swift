@@ -12,7 +12,7 @@ class TranzzoTokenizerTest: XCTestCase {
     var card: CardRequestData!
     var invalidCard: CardRequestData!
 
-    let apiToken = "m03z1jKTSO6zUYQN5C8xYZnIclK0plIQ/3YMgTZbV6g7kxle6ZnCaHVNv3A11UCK"
+    private let apiToken = "m03z1jKTSO6zUYQN5C8xYZnIclK0plIQ/3YMgTZbV6g7kxle6ZnCaHVNv3A11UCK"
 
     override func setUp() {
         super.setUp()
@@ -35,7 +35,7 @@ class TranzzoTokenizerTest: XCTestCase {
             }
         }
         
-        wait(for: [expectation], timeout: 3.0)
+        wait(for: [expectation], timeout: 4.0)
     }
 
     func testMakeEncryptSuccessRequest() {
@@ -52,7 +52,7 @@ class TranzzoTokenizerTest: XCTestCase {
             }
         }
         
-        wait(for: [expectation], timeout: 3.0)
+        wait(for: [expectation], timeout: 4.0)
     }
     
     func testMakeFailureRequest() {
@@ -68,7 +68,7 @@ class TranzzoTokenizerTest: XCTestCase {
             }
         }
         
-         wait(for: [expectation], timeout: 3.0)
+         wait(for: [expectation], timeout: 4.0)
     }
 
     override func tearDown() {

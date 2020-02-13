@@ -35,7 +35,6 @@ public class TranzzoTokenizer {
     ///
     /// - parameter card:          The `CardRequestData` value, make sure `rich` is set to `false`.
     /// - parameter result:        Closure, called when token data or an error is received
-    
     public func tokenize(card: CardRequestData,
                          result: @escaping (Result<TranzzoTokenSuccess, TranzzoTokenError>) -> Void) {
         fetch(card: card, completionHandler: result)

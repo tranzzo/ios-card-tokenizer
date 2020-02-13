@@ -46,8 +46,11 @@ Then drag TranzzoTokenizer.framework into your Xcode project.
 
 **Tokenization**: Simple way to obtain a Tranzzo user card token, generated on our servers.
     For more information visit our [**documentation**](https://cdn.tranzzo.com/tranzzo-api/index.html)
+**Validation**: Use straightforward card utilities to validate, define and format your card input
 
 ## Usage
+
+### Tokenization
 
 1. Import TranzzoTokenizer framework header
 
@@ -103,3 +106,30 @@ Then drag TranzzoTokenizer.framework into your Xcode project.
     }
     ```
 Read our [decryption guide](https://github.com/tranzzo/ios-card-tokenizer/blob/dev/DecryptionGuide.md) to learn more about `encryptedData`
+
+### Validation
+
+Use `TranzzoCardValidator` to validate your user's card input, such as number, cvv and expiration date.
+
+```swift
+  let validator = TranzzoCardValidator()
+  let numberIsValid = validator.isValid(cardNumber: cardNumber)
+```
+
+Specify `CardProvider` to validate it's cvv.
+
+```swift
+  let cvvIsValid = validator.isValid(cvv: "123", for: .visa)
+```
+
+Get the provider of a card by it's full number
+
+```swift
+  let provider = validator.getCardType(for: "4222222222222222") // .visa
+```
+
+or by it's prefix (length depends on specific provider)
+
+```swift
+  let provider = validator.getPartialCardType(for: "5455") // .mastercard
+```
