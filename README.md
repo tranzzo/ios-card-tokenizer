@@ -31,7 +31,7 @@ $ pod install
 To integrate TranzzoTokenizer into your Xcode project using [Carthage](https://github.com/Carthage/Carthage), add it to your `Cartfile`:
 
 ```
-binary "https://github.com/tranzzo/ios-card-tokenizer.git"
+github "https://github.com/tranzzo/ios-card-tokenizer.git"
 ```
 
 Then, run the following command:
