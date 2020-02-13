@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		CE1A775523F55E7200882613 /* URLRequestBuilderTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1A775423F55E7200882613 /* URLRequestBuilderTest.swift */; };
+		CE1A775723F577F400882613 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1A775623F577F400882613 /* Constants.swift */; };
 		CE4C74F42301584E00D46438 /* TranzzoTokenizer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE4C74EA2301584E00D46438 /* TranzzoTokenizer.framework */; };
 		CE4C74FB2301584E00D46438 /* TranzzoTokenizer.h in Headers */ = {isa = PBXBuildFile; fileRef = CE4C74ED2301584E00D46438 /* TranzzoTokenizer.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CE4C750623015D0800D46438 /* StringEncryptionExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4C750523015D0800D46438 /* StringEncryptionExtensions.swift */; };
@@ -23,7 +24,6 @@
 		CE831AF423CDDE1100259A52 /* NSNumberExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE831AF323CDDE1100259A52 /* NSNumberExtensions.swift */; };
 		CE831AF823CDE14D00259A52 /* DataEncoderTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE831AF723CDE14D00259A52 /* DataEncoderTest.swift */; };
 		CE831AFA23CDE17900259A52 /* TestHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE831AF923CDE17900259A52 /* TestHelpers.swift */; };
-		CE86F55423CCB2BC00C63592 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE86F55323CCB2BC00C63592 /* Constants.swift */; };
 		CE86F55623CCB59A00C63592 /* DataEncoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE86F55523CCB59A00C63592 /* DataEncoder.swift */; };
 		CE86F55823CCB5C900C63592 /* DataDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE86F55723CCB5C900C63592 /* DataDecoder.swift */; };
 		CECE035E23CCAB110051B826 /* TranzzoTokenError.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECE035D23CCAB110051B826 /* TranzzoTokenError.swift */; };
@@ -50,6 +50,7 @@
 
 /* Begin PBXFileReference section */
 		CE1A775423F55E7200882613 /* URLRequestBuilderTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLRequestBuilderTest.swift; sourceTree = "<group>"; };
+		CE1A775623F577F400882613 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		CE4C74EA2301584E00D46438 /* TranzzoTokenizer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = TranzzoTokenizer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE4C74ED2301584E00D46438 /* TranzzoTokenizer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TranzzoTokenizer.h; sourceTree = "<group>"; };
 		CE4C74F32301584E00D46438 /* TranzzoTokenizerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TranzzoTokenizerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -70,7 +71,6 @@
 		CE831AF323CDDE1100259A52 /* NSNumberExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSNumberExtensions.swift; sourceTree = "<group>"; };
 		CE831AF723CDE14D00259A52 /* DataEncoderTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataEncoderTest.swift; sourceTree = "<group>"; };
 		CE831AF923CDE17900259A52 /* TestHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestHelpers.swift; sourceTree = "<group>"; };
-		CE86F55323CCB2BC00C63592 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		CE86F55523CCB59A00C63592 /* DataEncoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataEncoder.swift; sourceTree = "<group>"; };
 		CE86F55723CCB5C900C63592 /* DataDecoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataDecoder.swift; sourceTree = "<group>"; };
 		CECE035D23CCAB110051B826 /* TranzzoTokenError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranzzoTokenError.swift; sourceTree = "<group>"; };
@@ -132,9 +132,9 @@
 				CE621A4923CF05E500EDBC8E /* Networking */,
 				CE621A4823CF05D100EDBC8E /* Extensions */,
 				CEDEA48D23CE07CE001B1D80 /* CardUtilities */,
-				CE86F55323CCB2BC00C63592 /* Constants.swift */,
 				CE4C74ED2301584E00D46438 /* TranzzoTokenizer.h */,
 				CE621A4D23CF082D00EDBC8E /* Info.plist */,
+				CE1A775623F577F400882613 /* Constants.swift */,
 			);
 			path = TranzzoTokenizer;
 			sourceTree = "<group>";
@@ -311,6 +311,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CE4C75182301984900D46438 /* URLSessionExtensions.swift in Sources */,
+				CE1A775723F577F400882613 /* Constants.swift in Sources */,
 				CECE036423CCAD990051B826 /* RequestData.swift in Sources */,
 				CE4C750A23015E2300D46438 /* UIDeviceExtensions.swift in Sources */,
 				CEDEA49323CE07FE001B1D80 /* TranzzoCardFormatter.swift in Sources */,
@@ -320,7 +321,6 @@
 				CE4C750623015D0800D46438 /* StringEncryptionExtensions.swift in Sources */,
 				CECE035E23CCAB110051B826 /* TranzzoTokenError.swift in Sources */,
 				CE4C750823015DB600D46438 /* CardRequestData.swift in Sources */,
-				CE86F55423CCB2BC00C63592 /* Constants.swift in Sources */,
 				CE86F55823CCB5C900C63592 /* DataDecoder.swift in Sources */,
 				CEDEA49523CE0DAA001B1D80 /* StringExtensions.swift in Sources */,
 				CE4C751023015F8800D46438 /* TranzzoTokenizer.swift in Sources */,
