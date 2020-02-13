@@ -31,7 +31,7 @@ $ pod install
 To integrate TranzzoTokenizer into your Xcode project using [Carthage](https://github.com/Carthage/Carthage), add it to your `Cartfile`:
 
 ```
-binary "https://github.com/tranzzo/ios-card-tokenizer.git"
+github "https://github.com/tranzzo/ios-card-tokenizer.git"
 ```
 
 Then, run the following command:
@@ -113,7 +113,6 @@ Use `TranzzoCardValidator` to validate your user's card input, such as number, c
 
 ```swift
   let validator = TranzzoCardValidator()
-  
   let numberIsValid = validator.isValid(cardNumber: cardNumber)
 ```
 
@@ -123,3 +122,14 @@ Specify `CardProvider` to validate it's cvv.
   let cvvIsValid = validator.isValid(cvv: "123", for: .visa)
 ```
 
+Get the provider of a card by it's full number
+
+```swift
+  let provider = validator.getCardType(for: "4222222222222222") // .visa
+```
+
+or by it's prefix (length depends on specific provider)
+
+```swift
+  let provider = validator.getPartialCardType(for: "5455") // .mastercard
+```

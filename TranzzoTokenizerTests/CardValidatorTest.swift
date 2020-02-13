@@ -27,6 +27,16 @@ class CardValidatorTest: XCTestCase {
         XCTAssertEqual(sut.getCardType(for: "2111111111111111"), CardProvider.mir)
         XCTAssertNil(sut.getCardType(for: "411111111111"))
     }
+  
+    func testGetPartialCardType() {
+        XCTAssertEqual(sut.getPartialCardType(for: "4"), CardProvider.visa)
+        XCTAssertEqual(sut.getPartialCardType(for: "3782"), CardProvider.amex)
+        XCTAssertEqual(sut.getPartialCardType(for: "5455"), CardProvider.mastercard)
+        XCTAssertEqual(sut.getPartialCardType(for: "6759"), CardProvider.maestro)
+        XCTAssertEqual(sut.getPartialCardType(for: "95811"), CardProvider.prostir)
+        XCTAssertEqual(sut.getPartialCardType(for: "2912"), CardProvider.mir)
+        XCTAssertNil(sut.getPartialCardType(for: "315141"))
+    }
     
     func testIsValidCardNumber() {
         XCTAssertTrue(sut.isValid(cardNumber: "4111 1111 1111 1111"))
@@ -44,6 +54,23 @@ class CardValidatorTest: XCTestCase {
         XCTAssertTrue(sut.isValid(cvv: "123", for: .visa))
         XCTAssertTrue(sut.isValid(cvv: "1234", for: .amex))
         XCTAssertFalse(sut.isValid(cvv: "1234", for: .mastercard))
+    }
+    
+    func testIsValidExpirationDateString() {
+        var string = "01/22"
+        XCTAssertTrue(sut.isValid(expirationDateString: string))
+        string = "01/2022"
+        XCTAssertTrue(sut.isValid(expirationDateString: string))
+        string = "012022"
+        XCTAssertTrue(sut.isValid(expirationDateString: string))
+        string = "12022"
+        XCTAssertTrue(sut.isValid(expirationDateString: string))
+        string = "122022"
+        XCTAssertTrue(sut.isValid(expirationDateString: string))
+        string = "122019"
+        XCTAssertFalse(sut.isValid(expirationDateString: string))
+        string = "122020"
+        XCTAssertTrue(sut.isValid(expirationDateString: string))
     }
     
     func testIsValidExpirationDate() {

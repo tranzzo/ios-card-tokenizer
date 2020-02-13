@@ -77,12 +77,12 @@
 		CECE035F23CCAB2D0051B826 /* Environment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Environment.swift; sourceTree = "<group>"; };
 		CECE036323CCAD990051B826 /* RequestData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestData.swift; sourceTree = "<group>"; };
 		CECE036523CCAF8F0051B826 /* URLRequestBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLRequestBuilder.swift; sourceTree = "<group>"; };
-		CEDEA48B23CE07B1001B1D80 /* TranzzoCardValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranzzoCardValidator.swift; sourceTree = "<group>"; };
-		CEDEA49023CE07EA001B1D80 /* CardProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardProvider.swift; sourceTree = "<group>"; };
+		CEDEA48B23CE07B1001B1D80 /* TranzzoCardValidator.swift */ = {isa = PBXFileReference; indentWidth = 4; lastKnownFileType = sourcecode.swift; path = TranzzoCardValidator.swift; sourceTree = "<group>"; tabWidth = 4; };
+		CEDEA49023CE07EA001B1D80 /* CardProvider.swift */ = {isa = PBXFileReference; indentWidth = 4; lastKnownFileType = sourcecode.swift; path = CardProvider.swift; sourceTree = "<group>"; tabWidth = 4; };
 		CEDEA49223CE07FE001B1D80 /* TranzzoCardFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranzzoCardFormatter.swift; sourceTree = "<group>"; };
 		CEDEA49423CE0DAA001B1D80 /* StringExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; };
 		CEDEA49623CE186D001B1D80 /* CardExpirationDate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardExpirationDate.swift; sourceTree = "<group>"; };
-		CEDEA49823CE1BCE001B1D80 /* CardValidatorTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardValidatorTest.swift; sourceTree = "<group>"; };
+		CEDEA49823CE1BCE001B1D80 /* CardValidatorTest.swift */ = {isa = PBXFileReference; indentWidth = 4; lastKnownFileType = sourcecode.swift; path = CardValidatorTest.swift; sourceTree = "<group>"; tabWidth = 4; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */

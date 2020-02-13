@@ -27,6 +27,22 @@ class TranzzoCardValidator {
         }
     }
     
+    /// Determines the card provider by its partial number (prefix)
+    /// - Note: Will remove spaces from `cardNumber`, if there are any
+    ///
+    /// - parameter cardNumber:          Partial card number
+    /// - Returns: Fetched `CardProvider`, if specified prefix is predefined by any provider, nil otherwise.
+    public func getPartialCardType(for cardNumber: String) -> CardProvider? {
+        var filteredNumber = cardNumber
+        if filteredNumber.containsNonDigits {
+            filteredNumber = filteredNumber.digitsOnly
+        }
+        
+        return cardTypes.first {
+            $0.hasCommonPrefix(with: filteredNumber)
+        }
+    }
+    
     /// Determines, if the card number is valid
     /// - Note: Will remove spaces from `cardNumber`, if there are any
     ///
@@ -66,6 +82,18 @@ class TranzzoCardValidator {
         return provider.validCVVLength == cvv.count
     }
     
+    public func isValid(expirationDateString: String) -> Bool {
+        guard !expirationDateString.isEmpty else {
+            return false
+        }
+        
+        guard let date = try? CardExpirationDate(rawDateString: expirationDateString) else {
+            return false
+        }
+        
+        return self.isValid(expirationDate: date)
+    }
+    
     /// Determines, if the expiration date values are valid
     ///
     /// - parameter expirationMonth:          Expiration month for a card.
@@ -75,10 +103,12 @@ class TranzzoCardValidator {
         let currentDate = Date()
         let year = calendar.component(.year, from: currentDate)
         let month = calendar.component(.month, from: currentDate)
-        if expirationDate.year == year {
+        if expirationDate.year == year || String(describing: year).hasSuffix(String(describing: expirationDate.year)) {
             return expirationDate.month >= month
         } else {
-            return expirationDate.year > year && expirationDate.month > 0 && expirationDate.month <= 12
+            let trimmedTargetYear = expirationDate.year % 100
+            let trimmedCurrentYear = year % 100
+            return trimmedTargetYear > trimmedCurrentYear && expirationDate.month > 0 && expirationDate.month <= 12
         }
     }
     

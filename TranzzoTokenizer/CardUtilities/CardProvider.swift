@@ -56,6 +56,25 @@ public enum CardProvider: String, CaseIterable {
         }
     }
     
+    private var prefixes: [PrefixContainable] {
+        switch self {
+        case .visa:
+            return [4]
+        case .mastercard:
+            return [51...55, 2221...2720]
+        case .maestro:
+            return [5018, 5020, 5038, 5893, 6304, 6759, 6761, 6762, 6763]
+        case .amex:
+            return [34, 37]
+        case .mir:
+            return [2]
+        case .prostir:
+            return [9]
+        case .unionpay:
+            return [] // was unable to research it's prefixes
+        }
+    }
+    
     /// Indeces of gaps expected in a card number for the provider
     var gaps: [Int] {
         switch self {
@@ -90,5 +109,40 @@ public enum CardProvider: String, CaseIterable {
         case .amex:
             return 4
         }
+    }
+    
+    func hasCommonPrefix(with string: String) -> Bool {
+        return self.prefixes.first {
+            $0.hasEqualPrefix(with: string)
+        } != nil
+    }
+}
+
+// Inspired by https://github.com/Rightpoint/CardParser/blob/master/CardParser.swift
+
+private protocol PrefixContainable {
+    func hasEqualPrefix(with string: String) -> Bool
+}
+
+extension String: PrefixContainable {
+    func hasEqualPrefix(with string: String) -> Bool {
+        return string.hasPrefix(self)
+    }
+}
+
+extension ClosedRange: PrefixContainable where Bound == Int {
+    func hasEqualPrefix(with string: String) -> Bool {
+        for value in self {
+            if value.hasEqualPrefix(with: string) {
+                return true
+            }
+        }
+        return false
+    }
+}
+
+extension Int: PrefixContainable {
+    func hasEqualPrefix(with string: String) -> Bool {
+        return string.hasPrefix(String(describing: self))
     }
 }
