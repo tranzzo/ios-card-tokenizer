@@ -7,7 +7,7 @@
 //
 
 import XCTest
-@testable import TranzzoSDK
+@testable import TranzzoTokenizer
 
 class CardFormatterTest: XCTestCase {
     var sut: CardFormatter!

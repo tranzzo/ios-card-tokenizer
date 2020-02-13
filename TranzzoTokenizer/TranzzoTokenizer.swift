@@ -6,25 +6,27 @@
 
 import Foundation
 
-public struct TokenSuccessResponse: Codable {
+public struct TranzzoTokenSuccess: Codable {
     public let token: String
 }
 
-public struct TokenEncryptSuccessResponse: Codable {
+public struct TranzzoTokenDataSuccess: Codable {
     public let data: String
 }
 
 public class TranzzoTokenizer {
     // MARK: - Private Properties
-    private let apiToken: String
+    private let apiKey: String
     private let environment: Environment
     private let urlSession = URLSession.shared
     private let decoder = DataDecoder()
     private let encoder = DataEncoder()
     
     // MARK: - Init
-    public init(apiToken: String, environment: Environment) {
-        self.apiToken = apiToken
+    /// - parameter apiKey: Merchant's unique key, used for authorization purposes
+    /// - parameter environment: Use `.stage` to test the workflow without affecting real values, use `.prod` for release versions.
+    public init(apiKey: String, environment: Environment) {
+        self.apiKey = apiKey
         self.environment = environment
     }
     
@@ -34,7 +36,7 @@ public class TranzzoTokenizer {
     /// - parameter card:          The `CardRequestData` value, make sure `rich` is set to `false`.
     /// - parameter result:        Closure, called when token data or an error is received
     public func tokenize(card: CardRequestData,
-                         result: @escaping (Result<TokenSuccessResponse, TranzzoError>) -> Void) {
+                         result: @escaping (Result<TranzzoTokenSuccess, TranzzoTokenError>) -> Void) {
         fetch(card: card, completionHandler: result)
     }
     
@@ -43,7 +45,7 @@ public class TranzzoTokenizer {
     /// - parameter card:          The `CardRequestData` value, make sure `rich` is set to `true`.
     /// - parameter result:        Closure, called when token data or an error is received
     public func tokenizeEncrypt(card: CardRequestData,
-                                result: @escaping (Result<TokenEncryptSuccessResponse, TranzzoError>) -> Void) {
+                                result: @escaping (Result<TranzzoTokenDataSuccess, TranzzoTokenError>) -> Void) {
         var richCard = card
         richCard.rich = true
         fetch(card: richCard, completionHandler: result)
@@ -51,12 +53,12 @@ public class TranzzoTokenizer {
     
     // MARK: - Private Methods
     private func fetch<T>(card: CardRequestData,
-                          completionHandler: @escaping (Result<T, TranzzoError>) -> Void) where T: Codable {
-        let sign = self.encoder.stringEncode(card)?.hmac(key: apiToken)
+                          completionHandler: @escaping (Result<T, TranzzoTokenError>) -> Void) where T: Codable {
+        let sign = self.encoder.stringEncode(card)?.hmac(key: apiKey)
         
         if var request = URLRequestBuilder.createURLRequest(to: environment.baseURL, requestData: .tokenize(card: card)) {
             request.setValue(sign, forHTTPHeaderField: "X-Sign")
-            request.setValue(apiToken, forHTTPHeaderField: "X-Widget-Id")
+            request.setValue(apiKey, forHTTPHeaderField: "X-Widget-Id")
             request.httpBody = try? encoder.encode(card)
             
             urlSession.dataTask(with: request) { (result) in
@@ -74,21 +76,21 @@ public class TranzzoTokenizer {
                     do {
                         completionHandler(.success(try self.decoder.decode(T.self, from: data)))
                     } catch {
-                        let error = TranzzoError(message: error.localizedDescription)
+                        let error = TranzzoTokenError(message: error.localizedDescription)
                         completionHandler(.failure(error))
                     }
                 case .failure(let error):
-                    completionHandler(.failure(TranzzoError(message: error.localizedDescription)))
+                    completionHandler(.failure(TranzzoTokenError(message: error.localizedDescription)))
                 }
             }.resume()
         }
     }
     
-    private func parseApiError(data: Data?) -> TranzzoError? {
+    private func parseApiError(data: Data?) -> TranzzoTokenError? {
         if let jsonData = data {
-            return try? self.decoder.decode(TranzzoError.self, from: jsonData)
+            return try? self.decoder.decode(TranzzoTokenError.self, from: jsonData)
         }
-        return TranzzoError(message: Constants.genericErrorMessage)
+        return TranzzoTokenError(message: Constants.genericErrorMessage)
     }
     
 }

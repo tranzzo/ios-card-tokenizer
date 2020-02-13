@@ -1,0 +1,81 @@
+# update_fastlane
+
+$scheme = "TranzzoTokenizer"
+$podspec = "./TranzzoTokenizer.podspec"
+$project = './TranzzoTokenizer.xcodeproj'
+$specsrepo = "https://github.com/tranzzo/ios-card-tokenizer.git"
+
+default_platform(:ios)
+
+before_all do |lane, options|
+	if options[:skip_checks]
+		UI.message "Skipping git status checks"
+	else
+		ensure_git_status_clean
+	end
+end
+
+desc "Push the repo to remote and submits the Pod to the given spec repository. Do this after running update to ensure that tests have been run, versions bumped, and changes committed."
+lane :submit_pod do |options|
+	push_to_git_remote(local_branch: "dev", remote_branch: "dev", remote: "origin")
+ 
+	# If a private specs repo is defined, use that instead. Otherwise use the master repo. 
+	if $specsrepo 
+		pod_push(
+			path: $podspec, 
+			repo: $specsrepo,
+			allow_warnings: true
+		)
+	else
+		pod_push(
+			path: $podspec, 
+			allow_warnings: true
+		)
+	end
+end
+ 
+desc "- Runs the unit tests"  
+desc "- Ensures Cocoapods compatibility"  
+desc "- Bumps the patch version"  
+lane :patch do
+	update(type: "patch")
+end
+ 
+desc "- Runs the unit tests"  
+desc "- Ensures Cocoapods compatibility"  
+desc "- Bumps the minor version"  
+lane :minor do
+	update(type: "minor")
+end  
+ 
+desc "- Runs the unit tests"  
+desc "- Ensures Cocoapods compatibility"  
+desc "- Bumps the major version"  
+lane :major do
+	update(type: "major")
+end  	
+ 
+private_lane :update do |options|
+	if $workspace 
+		scan(
+			workspace: $workspace
+		)
+	else 
+		scan
+	end
+ 
+	pod_lib_lint(
+		allow_warnings: true
+	)
+ 
+	type = options[:type]
+	
+	if type == "none" 
+		UI.message("No version type found")
+	else
+		version = version_bump_podspec(path: $podspec, bump_type: type)
+		git_commit(path: $podspec, message: "Updating podspec")
+		increment_version_number( bump_type: type, version_number: version, xcodeproj: $project )
+		commit_version_bump(xcodeproj: $project)
+	end
+end

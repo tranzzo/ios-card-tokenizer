@@ -7,7 +7,7 @@
 //
 
 import XCTest
-@testable import TranzzoSDK
+@testable import TranzzoTokenizer
 
 class CardExpirationDateTest: XCTestCase {
     func testInitFromRawDateString() {
