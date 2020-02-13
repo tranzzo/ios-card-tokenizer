@@ -6,7 +6,7 @@
 
 import Foundation
 /// Type that provides methods to determine card providers and validate card data, such as number, cvv and expiry date
-class TranzzoCardValidator {
+public class TranzzoCardValidator {
     // MARK: - Private Properties
     private let cardTypes = CardProvider.allCases
     private let calendar = Calendar.current
