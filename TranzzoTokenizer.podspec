@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'TranzzoTokenizer'
-  s.version          = '1.1.0'
+  s.version          = '1.2.0'
   s.summary          = 'TranzzoTokenizer helps you get a token for a bank card through Tranzzo Payment Provider.'
   s.description      = "TranzzoTokenizer provides a simple interface to get a token for a payment card, that your users specify. This token will further be used when working with other Tranzzo services."
 
