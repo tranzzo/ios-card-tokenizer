@@ -69,7 +69,12 @@ private_lane :update do |options|
 	if type == "none" 
 		UI.message("No version type found")
 	else
-		version = version_bump_podspec(path: $podspec, bump_type: type)
+		project_version = get_version_number
+		podspec_version = version_get_podspec(path: $podspec)
+		version = project_version
+		if get_version == podspec_version
+			version = version_bump_podspec(path: $podspec, bump_type: type)
+		end	
 		git_commit(path: $podspec, message: "Updating podspec")
 		increment_version_number( bump_type: type, version_number: version, xcodeproj: $project )
 		add_git_tag
