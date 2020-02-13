@@ -71,11 +71,11 @@ private_lane :update do |options|
 	else
 		version = version_bump_podspec(path: $podspec, bump_type: type)
 		git_commit(path: $podspec, message: "Updating podspec")
+		increment_version_number( bump_type: type, version_number: version, xcodeproj: $project )
+		add_git_tag
 		pod_lib_lint(
 			allow_warnings: true
 		)
-		increment_version_number( bump_type: type, version_number: version, xcodeproj: $project )
-		add_git_tag
 		commit_version_bump(xcodeproj: $project)
 	end
 end
