@@ -1,6 +1,6 @@
 //
 //  CardValidatorTest.swift
-//  TranzzoSDKTests
+//  Tests
 //
 //  Created by user on 1/14/20.
 //  Copyright © 2020 Tranzzo. All rights reserved.
@@ -10,21 +10,21 @@ import XCTest
 @testable import TranzzoTokenizer
 
 class CardValidatorTest: XCTestCase {
-    var sut: CardValidator!
+    var sut: TranzzoCardValidator!
     
     override func setUp() {
         super.setUp()
-        sut = CardValidator()
+        sut = TranzzoCardValidator()
     }
     
     func testGetCardType() {
-        XCTAssertEqual(sut.getCardType(for: "4111 1111 1111 1111"), CardProvider.visa)
-        XCTAssertEqual(sut.getCardType(for: "3782 822463 10005"), CardProvider.amex)
-        XCTAssertEqual(sut.getCardType(for: "5555 5555 5555 4444"), CardProvider.mastercard)
-        XCTAssertEqual(sut.getCardType(for: "6759 6498 2643 8453"), CardProvider.maestro)
-        XCTAssertEqual(sut.getCardType(for: "4111111111111111"), CardProvider.visa)
-        XCTAssertEqual(sut.getCardType(for: "9111111111111111"), CardProvider.prostir)
-        XCTAssertEqual(sut.getCardType(for: "2111111111111111"), CardProvider.mir)
+        XCTAssertEqual(sut.getCardType(for: "4111 1111 1111 1111"), TranzzoCardProvider.visa)
+        XCTAssertEqual(sut.getCardType(for: "3782 822463 10005"), TranzzoCardProvider.amex)
+        XCTAssertEqual(sut.getCardType(for: "5555 5555 5555 4444"), TranzzoCardProvider.mastercard)
+        XCTAssertEqual(sut.getCardType(for: "6759 6498 2643 8453"), TranzzoCardProvider.maestro)
+        XCTAssertEqual(sut.getCardType(for: "4111111111111111"), TranzzoCardProvider.visa)
+        XCTAssertEqual(sut.getCardType(for: "9111111111111111"), TranzzoCardProvider.prostir)
+        XCTAssertEqual(sut.getCardType(for: "2111111111111111"), TranzzoCardProvider.mir)
         XCTAssertNil(sut.getCardType(for: "411111111111"))
     }
     

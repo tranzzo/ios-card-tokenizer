@@ -7,8 +7,8 @@
 import Foundation
 
 enum HTTPMethod: String {
-    case get
-    case post
+    case get = "GET"
+    case post = "POST"
 }
 
 enum RequestData {

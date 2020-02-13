@@ -21,4 +21,8 @@ final class TestHelpers {
     static func createInvalidCardRequestData() -> CardRequestData {
         CardRequestData(cardNumber: "4242424242424241", expirationDate: CardExpirationDate(month: 22, year: 22), cardCvv: "123")
     }
+  
+  static func createRequestData() -> RequestData {
+    return .tokenize(card: createValidCardRequestData())
+  }
 }

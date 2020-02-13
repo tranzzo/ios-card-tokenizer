@@ -6,12 +6,12 @@
 
 #import <UIKit/UIKit.h>
 
-//! Project version number for TranzzoSDK.
+//! Project version number for TranzzoTokenizer.
 FOUNDATION_EXPORT double TranzzoSDKVersionNumber;
 
-//! Project version string for TranzzoSDK.
+//! Project version string for TranzzoTokenizer.
 FOUNDATION_EXPORT const unsigned char TranzzoSDKVersionString[];
 
-// In this header, you should import all the public headers of your framework using statements like #import <TranzzoSDK/PublicHeader.h>
+// In this header, you should import all the public headers of your framework using statements like #import <TranzzoTokenizer/PublicHeader.h>
 
 

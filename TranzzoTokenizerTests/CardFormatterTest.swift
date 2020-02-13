@@ -1,6 +1,6 @@
 //
 //  CardFormatterTest.swift
-//  TranzzoSDKTests
+//  TranzzoTokenizerTests
 //
 //  Created by user on 15.01.2020.
 //  Copyright © 2020 Tranzzo. All rights reserved.
@@ -10,11 +10,11 @@ import XCTest
 @testable import TranzzoTokenizer
 
 class CardFormatterTest: XCTestCase {
-    var sut: CardFormatter!
+    var sut: TranzzoCardFormatter!
     
     override func setUp() {
         super.setUp()
-        sut = CardFormatter()
+        sut = TranzzoCardFormatter()
     }
     
     func testFormatCardNumberForCardType() {

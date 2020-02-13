@@ -7,7 +7,7 @@
 import Foundation
 
 /// Defines the rules for various card providers.
-public enum CardProvider: String, CaseIterable {
+public enum TranzzoCardProvider: String, CaseIterable {
     case mastercard
     case visa
     case prostir
@@ -37,7 +37,7 @@ public enum CardProvider: String, CaseIterable {
     }
     
     /// Regex pattern for card number to satisfy for the provider
-    public var pattern: String {
+    var pattern: String {
         switch self {
         case .visa:
             return "^4[0-9]{12}(?:[0-9]{3})?$"
@@ -57,7 +57,7 @@ public enum CardProvider: String, CaseIterable {
     }
     
     /// Indeces of gaps expected in a card number for the provider
-    public var gaps: [Int] {
+    var gaps: [Int] {
         switch self {
         case .visa, .maestro, .mastercard, .prostir, .mir:
                 return [4, 8, 12]
@@ -69,7 +69,7 @@ public enum CardProvider: String, CaseIterable {
     }
     
     /// Valid length of a valid card number for the provider
-    public var validLength: [Int] {
+    var validLength: [Int] {
         switch self {
         case .visa, .mastercard, .prostir, .mir:
             return [16]
@@ -83,7 +83,7 @@ public enum CardProvider: String, CaseIterable {
     }
     
     /// Valid length of a valid card cvv for the provider
-    public var validCVVLength: Int {
+    var validCVVLength: Int {
         switch self {
         case .visa, .mastercard, .prostir, .maestro, .mir, .unionpay:
             return 3
@@ -92,38 +92,3 @@ public enum CardProvider: String, CaseIterable {
         }
     }
 }
-
-//let cardTypes: KeyValuePairs<CardType, CardData> = [
-//    .visa: CardData(
-//        type: .visa,
-//        name: "Visa",
-//        pattern: "^4[0-9]{12}(?:[0-9]{3})?$",
-//        gaps: [4, 8, 12],
-//        validLength: [16],
-//        validCVVLength: [3]
-//    ),
-//    .mastercard: CardData(
-//        type: .mastercard,
-//        name: "Mastercard",
-//        pattern: "^(5[1-5]|222[1-9]|22[3-9]|2[3-6]|27[0-1]|2720)\\d*$",
-//        gaps: [4, 8, 12],
-//        validLength: [16],
-//        validCVVLength: [3]
-//    ),
-//    .maestro: CardData(
-//        type: .maestro,
-//        name: "Maestro",
-//        pattern: "^(?:5[06789]\\d\\d|(?!6011[0234])(?!60117[4789])(?!60118[6789])(?!60119)(?!64[456789])(?!65)6\\d{3})\\d{8,15}$",
-//        gaps: [4, 8, 12],
-//        validLength: [12, 13, 14, 15, 16, 17, 18, 19],
-//        validCVVLength: [3]
-//    ),
-//    .amex: CardData(
-//        type: .amex,
-//        name: "American Express",
-//        pattern: "^3[47]\\d*$",
-//        gaps: [4, 10],
-//        validLength: [14, 16, 19],
-//        validCVVLength: [4]
-//    )
-//]

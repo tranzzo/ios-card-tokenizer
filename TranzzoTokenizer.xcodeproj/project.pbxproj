@@ -7,8 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CE1A775523F55E7200882613 /* URLRequestBuilderTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1A775423F55E7200882613 /* URLRequestBuilderTest.swift */; };
 		CE4C74F42301584E00D46438 /* TranzzoTokenizer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE4C74EA2301584E00D46438 /* TranzzoTokenizer.framework */; };
-		CE4C74FB2301584E00D46438 /* TranzzoSDK.h in Headers */ = {isa = PBXBuildFile; fileRef = CE4C74ED2301584E00D46438 /* TranzzoSDK.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CE4C74FB2301584E00D46438 /* TranzzoTokenizer.h in Headers */ = {isa = PBXBuildFile; fileRef = CE4C74ED2301584E00D46438 /* TranzzoTokenizer.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CE4C750623015D0800D46438 /* StringEncryptionExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4C750523015D0800D46438 /* StringEncryptionExtensions.swift */; };
 		CE4C750823015DB600D46438 /* CardRequestData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4C750723015DB600D46438 /* CardRequestData.swift */; };
 		CE4C750A23015E2300D46438 /* UIDeviceExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4C750923015E2300D46438 /* UIDeviceExtensions.swift */; };
@@ -29,9 +30,9 @@
 		CECE036023CCAB2D0051B826 /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECE035F23CCAB2D0051B826 /* Environment.swift */; };
 		CECE036423CCAD990051B826 /* RequestData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECE036323CCAD990051B826 /* RequestData.swift */; };
 		CECE036623CCAF8F0051B826 /* URLRequestBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECE036523CCAF8F0051B826 /* URLRequestBuilder.swift */; };
-		CEDEA48C23CE07B1001B1D80 /* CardValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDEA48B23CE07B1001B1D80 /* CardValidator.swift */; };
-		CEDEA49123CE07EA001B1D80 /* CardProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDEA49023CE07EA001B1D80 /* CardProvider.swift */; };
-		CEDEA49323CE07FE001B1D80 /* CardFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDEA49223CE07FE001B1D80 /* CardFormatter.swift */; };
+		CEDEA48C23CE07B1001B1D80 /* TranzzoCardValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDEA48B23CE07B1001B1D80 /* TranzzoCardValidator.swift */; };
+		CEDEA49123CE07EA001B1D80 /* TranzzoCardProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDEA49023CE07EA001B1D80 /* TranzzoCardProvider.swift */; };
+		CEDEA49323CE07FE001B1D80 /* TranzzoCardFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDEA49223CE07FE001B1D80 /* TranzzoCardFormatter.swift */; };
 		CEDEA49523CE0DAA001B1D80 /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDEA49423CE0DAA001B1D80 /* StringExtensions.swift */; };
 		CEDEA49723CE186D001B1D80 /* CardExpirationDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDEA49623CE186D001B1D80 /* CardExpirationDate.swift */; };
 		CEDEA49923CE1BCE001B1D80 /* CardValidatorTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDEA49823CE1BCE001B1D80 /* CardValidatorTest.swift */; };
@@ -48,8 +49,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		CE1A775423F55E7200882613 /* URLRequestBuilderTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLRequestBuilderTest.swift; sourceTree = "<group>"; };
 		CE4C74EA2301584E00D46438 /* TranzzoTokenizer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = TranzzoTokenizer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		CE4C74ED2301584E00D46438 /* TranzzoSDK.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TranzzoSDK.h; sourceTree = "<group>"; };
+		CE4C74ED2301584E00D46438 /* TranzzoTokenizer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TranzzoTokenizer.h; sourceTree = "<group>"; };
 		CE4C74F32301584E00D46438 /* TranzzoTokenizerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TranzzoTokenizerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE4C74FA2301584E00D46438 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CE4C750423015ADD00D46438 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
@@ -75,9 +77,9 @@
 		CECE035F23CCAB2D0051B826 /* Environment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Environment.swift; sourceTree = "<group>"; };
 		CECE036323CCAD990051B826 /* RequestData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestData.swift; sourceTree = "<group>"; };
 		CECE036523CCAF8F0051B826 /* URLRequestBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLRequestBuilder.swift; sourceTree = "<group>"; };
-		CEDEA48B23CE07B1001B1D80 /* CardValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardValidator.swift; sourceTree = "<group>"; };
-		CEDEA49023CE07EA001B1D80 /* CardProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardProvider.swift; sourceTree = "<group>"; };
-		CEDEA49223CE07FE001B1D80 /* CardFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardFormatter.swift; sourceTree = "<group>"; };
+		CEDEA48B23CE07B1001B1D80 /* TranzzoCardValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranzzoCardValidator.swift; sourceTree = "<group>"; };
+		CEDEA49023CE07EA001B1D80 /* TranzzoCardProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranzzoCardProvider.swift; sourceTree = "<group>"; };
+		CEDEA49223CE07FE001B1D80 /* TranzzoCardFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranzzoCardFormatter.swift; sourceTree = "<group>"; };
 		CEDEA49423CE0DAA001B1D80 /* StringExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; };
 		CEDEA49623CE186D001B1D80 /* CardExpirationDate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardExpirationDate.swift; sourceTree = "<group>"; };
 		CEDEA49823CE1BCE001B1D80 /* CardValidatorTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardValidatorTest.swift; sourceTree = "<group>"; };
@@ -108,7 +110,7 @@
 				CE4C750423015ADD00D46438 /* README.md */,
 				CE831AED23CDB30500259A52 /* LICENSE */,
 				CE4C74EC2301584E00D46438 /* TranzzoTokenizer */,
-				CE4C74F72301584E00D46438 /* TranzzoSDKTests */,
+				CE4C74F72301584E00D46438 /* TranzzoTokenizerTests */,
 				CE4C74EB2301584E00D46438 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -131,13 +133,13 @@
 				CE621A4823CF05D100EDBC8E /* Extensions */,
 				CEDEA48D23CE07CE001B1D80 /* CardUtilities */,
 				CE86F55323CCB2BC00C63592 /* Constants.swift */,
-				CE4C74ED2301584E00D46438 /* TranzzoSDK.h */,
+				CE4C74ED2301584E00D46438 /* TranzzoTokenizer.h */,
 				CE621A4D23CF082D00EDBC8E /* Info.plist */,
 			);
 			path = TranzzoTokenizer;
 			sourceTree = "<group>";
 		};
-		CE4C74F72301584E00D46438 /* TranzzoSDKTests */ = {
+		CE4C74F72301584E00D46438 /* TranzzoTokenizerTests */ = {
 			isa = PBXGroup;
 			children = (
 				CE4C75232301EBAC00D46438 /* CryptoTest.swift */,
@@ -148,8 +150,9 @@
 				CEDEA49823CE1BCE001B1D80 /* CardValidatorTest.swift */,
 				CE621A4623CEFDDF00EDBC8E /* CardFormatterTest.swift */,
 				CE52C0B823CF139200A6FB43 /* CardExpirationDateTest.swift */,
+				CE1A775423F55E7200882613 /* URLRequestBuilderTest.swift */,
 			);
-			path = TranzzoSDKTests;
+			path = TranzzoTokenizerTests;
 			sourceTree = "<group>";
 		};
 		CE621A4823CF05D100EDBC8E /* Extensions */ = {
@@ -173,7 +176,7 @@
 				CE86F55723CCB5C900C63592 /* DataDecoder.swift */,
 				CECE036323CCAD990051B826 /* RequestData.swift */,
 				CECE036523CCAF8F0051B826 /* URLRequestBuilder.swift */,
-				CECE035D23CCAB110051B826 /* TranzzoError.swift */,
+				CECE035D23CCAB110051B826 /* TranzzoTokenError.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -190,9 +193,9 @@
 		CEDEA48D23CE07CE001B1D80 /* CardUtilities */ = {
 			isa = PBXGroup;
 			children = (
-				CEDEA48B23CE07B1001B1D80 /* CardValidator.swift */,
-				CEDEA49023CE07EA001B1D80 /* CardProvider.swift */,
-				CEDEA49223CE07FE001B1D80 /* CardFormatter.swift */,
+				CEDEA48B23CE07B1001B1D80 /* TranzzoCardValidator.swift */,
+				CEDEA49023CE07EA001B1D80 /* TranzzoCardProvider.swift */,
+				CEDEA49223CE07FE001B1D80 /* TranzzoCardFormatter.swift */,
 			);
 			path = CardUtilities;
 			sourceTree = "<group>";
@@ -204,7 +207,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CE4C74FB2301584E00D46438 /* TranzzoSDK.h in Headers */,
+				CE4C74FB2301584E00D46438 /* TranzzoTokenizer.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -310,7 +313,7 @@
 				CE4C75182301984900D46438 /* URLSessionExtensions.swift in Sources */,
 				CECE036423CCAD990051B826 /* RequestData.swift in Sources */,
 				CE4C750A23015E2300D46438 /* UIDeviceExtensions.swift in Sources */,
-				CEDEA49323CE07FE001B1D80 /* CardFormatter.swift in Sources */,
+				CEDEA49323CE07FE001B1D80 /* TranzzoCardFormatter.swift in Sources */,
 				CECE036623CCAF8F0051B826 /* URLRequestBuilder.swift in Sources */,
 				CEDEA49723CE186D001B1D80 /* CardExpirationDate.swift in Sources */,
 				CE4C750C23015E5B00D46438 /* BundleExtensions.swift in Sources */,
@@ -322,10 +325,10 @@
 				CEDEA49523CE0DAA001B1D80 /* StringExtensions.swift in Sources */,
 				CE4C751023015F8800D46438 /* TranzzoTokenizer.swift in Sources */,
 				CE831AF423CDDE1100259A52 /* NSNumberExtensions.swift in Sources */,
-				CEDEA48C23CE07B1001B1D80 /* CardValidator.swift in Sources */,
+				CEDEA48C23CE07B1001B1D80 /* TranzzoCardValidator.swift in Sources */,
 				CECE036023CCAB2D0051B826 /* Environment.swift in Sources */,
 				CE86F55623CCB59A00C63592 /* DataEncoder.swift in Sources */,
-				CEDEA49123CE07EA001B1D80 /* CardProvider.swift in Sources */,
+				CEDEA49123CE07EA001B1D80 /* TranzzoCardProvider.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -334,6 +337,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CE621A4723CEFDDF00EDBC8E /* CardFormatterTest.swift in Sources */,
+				CE1A775523F55E7200882613 /* URLRequestBuilderTest.swift in Sources */,
 				CE52C0B923CF139200A6FB43 /* CardExpirationDateTest.swift in Sources */,
 				CE4C75242301EBAC00D46438 /* CryptoTest.swift in Sources */,
 				CEDEA49923CE1BCE001B1D80 /* CardValidatorTest.swift in Sources */,
@@ -548,13 +552,13 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = DW5R2L25P8;
-				INFOPLIST_FILE = TranzzoSDKTests/Info.plist;
+				INFOPLIST_FILE = TranzzoTokenizerTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = tranzzo.TranzzoSDKTests;
+				PRODUCT_BUNDLE_IDENTIFIER = tranzzo.TranzzoTokenizerTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
@@ -569,13 +573,13 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = DW5R2L25P8;
-				INFOPLIST_FILE = TranzzoSDKTests/Info.plist;
+				INFOPLIST_FILE = TranzzoTokenizerTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = tranzzo.TranzzoSDKTests;
+				PRODUCT_BUNDLE_IDENTIFIER = tranzzo.TranzzoTokenizerTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

@@ -6,9 +6,9 @@
 
 import Foundation
 /// Type that provides methods to determine card providers and validate card data, such as number, cvv and expiry date
-class CardValidator {
+class TranzzoCardValidator {
     // MARK: - Private Properties
-    private let cardTypes = CardProvider.allCases
+    private let cardTypes = TranzzoCardProvider.allCases
     private let calendar = Calendar.current
     
     // MARK: - Public Properties
@@ -17,7 +17,7 @@ class CardValidator {
     ///
     /// - parameter cardNumber:          Card number
     /// - Returns: Fetched `CardProvider`, if specified number is valid, nil otherwise.
-    public func getCardType(for cardNumber: String) -> CardProvider? {
+    public func getCardType(for cardNumber: String) -> TranzzoCardProvider? {
         var filteredNumber = cardNumber
         if filteredNumber.containsNonDigits {
             filteredNumber = filteredNumber.digitsOnly
@@ -48,7 +48,7 @@ class CardValidator {
     /// - parameter cardNumber:          Card number to validate.
     /// - parameter provider:          `CardProvider`, that provides validation rules.
     /// - Returns: `true` if specified number is valid, `false` otherwise.
-    public func isValid(cardNumber: String, for provider: CardProvider) -> Bool {
+    public func isValid(cardNumber: String, for provider: TranzzoCardProvider) -> Bool {
         var filteredNumber = cardNumber
         if filteredNumber.containsNonDigits {
             filteredNumber = filteredNumber.digitsOnly
@@ -62,7 +62,7 @@ class CardValidator {
     /// - parameter cvv:          CVV to validate.
     /// - parameter provider:          `CardProvider`, that provides validation rules.
     /// - Returns: `true` if specified cvv is valid, `false` otherwise.
-    public func isValid(cvv: String, for provider: CardProvider) -> Bool {
+    public func isValid(cvv: String, for provider: TranzzoCardProvider) -> Bool {
         return provider.validCVVLength == cvv.count
     }
     

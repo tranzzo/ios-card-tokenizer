@@ -6,13 +6,13 @@
 
 import Foundation
 /// Type that provides various card  formatting methods
-final class CardFormatter {
+final class TranzzoCardFormatter {
     /// Formats the card number to follow the rules of a specified provider
     ///
     /// - parameter cardNumber:          Input card number to format.
     /// - parameter provider:          `CardProvider`, that provides formatting rules.
     /// - Returns: Card number, that follows formatting rules of a specified provider
-    public func format(cardNumber: String, for cardType: CardProvider) -> String {
+    public func format(cardNumber: String, for cardType: TranzzoCardProvider) -> String {
         var filteredNumber = cardNumber
         if filteredNumber.containsNonDigits {
             filteredNumber = filteredNumber.digitsOnly

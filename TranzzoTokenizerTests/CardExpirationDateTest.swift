@@ -1,6 +1,6 @@
 //
 //  CardExpirationDateTest.swift
-//  TranzzoSDKTests
+//  TranzzoTokenizerTests
 //
 //  Created by user on 15.01.2020.
 //  Copyright © 2020 Tranzzo. All rights reserved.
