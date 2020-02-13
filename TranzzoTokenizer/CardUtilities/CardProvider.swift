@@ -7,7 +7,7 @@
 import Foundation
 
 /// Defines the rules for various card providers.
-public enum TranzzoCardProvider: String, CaseIterable {
+public enum CardProvider: String, CaseIterable {
     case mastercard
     case visa
     case prostir

@@ -12,7 +12,7 @@ final class TranzzoCardFormatter {
     /// - parameter cardNumber:          Input card number to format.
     /// - parameter provider:          `CardProvider`, that provides formatting rules.
     /// - Returns: Card number, that follows formatting rules of a specified provider
-    public func format(cardNumber: String, for cardType: TranzzoCardProvider) -> String {
+    public func format(cardNumber: String, for cardType: CardProvider) -> String {
         var filteredNumber = cardNumber
         if filteredNumber.containsNonDigits {
             filteredNumber = filteredNumber.digitsOnly

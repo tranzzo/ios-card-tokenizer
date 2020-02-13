@@ -31,7 +31,7 @@
 		CECE036423CCAD990051B826 /* RequestData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECE036323CCAD990051B826 /* RequestData.swift */; };
 		CECE036623CCAF8F0051B826 /* URLRequestBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECE036523CCAF8F0051B826 /* URLRequestBuilder.swift */; };
 		CEDEA48C23CE07B1001B1D80 /* TranzzoCardValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDEA48B23CE07B1001B1D80 /* TranzzoCardValidator.swift */; };
-		CEDEA49123CE07EA001B1D80 /* TranzzoCardProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDEA49023CE07EA001B1D80 /* TranzzoCardProvider.swift */; };
+		CEDEA49123CE07EA001B1D80 /* CardProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDEA49023CE07EA001B1D80 /* CardProvider.swift */; };
 		CEDEA49323CE07FE001B1D80 /* TranzzoCardFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDEA49223CE07FE001B1D80 /* TranzzoCardFormatter.swift */; };
 		CEDEA49523CE0DAA001B1D80 /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDEA49423CE0DAA001B1D80 /* StringExtensions.swift */; };
 		CEDEA49723CE186D001B1D80 /* CardExpirationDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDEA49623CE186D001B1D80 /* CardExpirationDate.swift */; };
@@ -78,7 +78,7 @@
 		CECE036323CCAD990051B826 /* RequestData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestData.swift; sourceTree = "<group>"; };
 		CECE036523CCAF8F0051B826 /* URLRequestBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLRequestBuilder.swift; sourceTree = "<group>"; };
 		CEDEA48B23CE07B1001B1D80 /* TranzzoCardValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranzzoCardValidator.swift; sourceTree = "<group>"; };
-		CEDEA49023CE07EA001B1D80 /* TranzzoCardProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranzzoCardProvider.swift; sourceTree = "<group>"; };
+		CEDEA49023CE07EA001B1D80 /* CardProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardProvider.swift; sourceTree = "<group>"; };
 		CEDEA49223CE07FE001B1D80 /* TranzzoCardFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranzzoCardFormatter.swift; sourceTree = "<group>"; };
 		CEDEA49423CE0DAA001B1D80 /* StringExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; };
 		CEDEA49623CE186D001B1D80 /* CardExpirationDate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardExpirationDate.swift; sourceTree = "<group>"; };
@@ -194,7 +194,7 @@
 			isa = PBXGroup;
 			children = (
 				CEDEA48B23CE07B1001B1D80 /* TranzzoCardValidator.swift */,
-				CEDEA49023CE07EA001B1D80 /* TranzzoCardProvider.swift */,
+				CEDEA49023CE07EA001B1D80 /* CardProvider.swift */,
 				CEDEA49223CE07FE001B1D80 /* TranzzoCardFormatter.swift */,
 			);
 			path = CardUtilities;
@@ -328,7 +328,7 @@
 				CEDEA48C23CE07B1001B1D80 /* TranzzoCardValidator.swift in Sources */,
 				CECE036023CCAB2D0051B826 /* Environment.swift in Sources */,
 				CE86F55623CCB59A00C63592 /* DataEncoder.swift in Sources */,
-				CEDEA49123CE07EA001B1D80 /* TranzzoCardProvider.swift in Sources */,
+				CEDEA49123CE07EA001B1D80 /* CardProvider.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
