@@ -106,7 +106,7 @@ public class TranzzoCardValidator {
         let year = calendar.component(.year, from: currentDate)
         let month = calendar.component(.month, from: currentDate)
         if expirationDate.year == year || String(describing: year).hasSuffix(String(describing: expirationDate.year)) {
-            return expirationDate.month >= month
+            return expirationDate.month >= month && expirationDate.month > 0 && expirationDate.month <= 12
         } else {
             let trimmedTargetYear = expirationDate.year % 100
             let trimmedCurrentYear = year % 100

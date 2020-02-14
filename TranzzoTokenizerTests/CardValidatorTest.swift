@@ -71,6 +71,8 @@ class CardValidatorTest: XCTestCase {
         XCTAssertFalse(sut.isValid(expirationDateString: string))
         string = "122020"
         XCTAssertTrue(sut.isValid(expirationDateString: string))
+        string = "132020"
+        XCTAssertFalse(sut.isValid(expirationDateString: string))
     }
     
     func testIsValidExpirationDate() {
@@ -83,6 +85,11 @@ class CardValidatorTest: XCTestCase {
         XCTAssertTrue(sut.isValid(expirationDate: CardExpirationDate(month: month + 1, year: year)))
         XCTAssertFalse(sut.isValid(expirationDate: CardExpirationDate(month: 0, year: year)))
         XCTAssertTrue(sut.isValid(expirationDate: CardExpirationDate(month: month + 1, year: year + 8)))
+        XCTAssertFalse(sut.isValid(expirationDate: CardExpirationDate(month: 13, year: year)))
+        XCTAssertFalse(sut.isValid(expirationDate: CardExpirationDate(month: 13, year: year % 100)))
         XCTAssertFalse(sut.isValid(expirationDate: CardExpirationDate(month: 0, year: year + 8)))
+        XCTAssertTrue(sut.isValid(expirationDate: CardExpirationDate(month: month + 1, year: year % 100)))
+        XCTAssertFalse(sut.isValid(expirationDate: CardExpirationDate(month: 0, year: year % 100)))
+        XCTAssertTrue(sut.isValid(expirationDate: CardExpirationDate(month: month + 1, year: year + 8 % 100)))
     }
 }
