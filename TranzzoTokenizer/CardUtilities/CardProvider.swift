@@ -88,7 +88,7 @@ public enum CardProvider: String, CaseIterable {
     }
     
     /// Valid length of a valid card number for the provider
-    var validLength: [Int] {
+    public var validLength: [Int] {
         switch self {
         case .visa, .mastercard, .prostir, .mir:
             return [16]
@@ -102,7 +102,7 @@ public enum CardProvider: String, CaseIterable {
     }
     
     /// Valid length of a valid card cvv for the provider
-    var validCVVLength: Int {
+    public var validCVVLength: Int {
         switch self {
         case .visa, .mastercard, .prostir, .maestro, .mir, .unionpay:
             return 3
