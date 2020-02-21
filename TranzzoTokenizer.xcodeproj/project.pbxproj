@@ -64,7 +64,7 @@
 		CE4C75172301984900D46438 /* URLSessionExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionExtensions.swift; sourceTree = "<group>"; };
 		CE4C75232301EBAC00D46438 /* CryptoTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoTest.swift; sourceTree = "<group>"; };
 		CE4C75252301EFD100D46438 /* TranzzoTokenizerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranzzoTokenizerTest.swift; sourceTree = "<group>"; };
-		CE52C0B823CF139200A6FB43 /* CardExpirationDateTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardExpirationDateTest.swift; sourceTree = "<group>"; };
+		CE52C0B823CF139200A6FB43 /* CardExpirationDateTest.swift */ = {isa = PBXFileReference; indentWidth = 4; lastKnownFileType = sourcecode.swift; path = CardExpirationDateTest.swift; sourceTree = "<group>"; tabWidth = 4; };
 		CE621A4623CEFDDF00EDBC8E /* CardFormatterTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardFormatterTest.swift; sourceTree = "<group>"; };
 		CE621A4D23CF082D00EDBC8E /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CE831AED23CDB30500259A52 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
@@ -81,7 +81,7 @@
 		CEDEA49023CE07EA001B1D80 /* CardProvider.swift */ = {isa = PBXFileReference; indentWidth = 4; lastKnownFileType = sourcecode.swift; path = CardProvider.swift; sourceTree = "<group>"; tabWidth = 4; };
 		CEDEA49223CE07FE001B1D80 /* TranzzoCardFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranzzoCardFormatter.swift; sourceTree = "<group>"; };
 		CEDEA49423CE0DAA001B1D80 /* StringExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; };
-		CEDEA49623CE186D001B1D80 /* CardExpirationDate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardExpirationDate.swift; sourceTree = "<group>"; };
+		CEDEA49623CE186D001B1D80 /* CardExpirationDate.swift */ = {isa = PBXFileReference; indentWidth = 4; lastKnownFileType = sourcecode.swift; path = CardExpirationDate.swift; sourceTree = "<group>"; tabWidth = 4; };
 		CEDEA49823CE1BCE001B1D80 /* CardValidatorTest.swift */ = {isa = PBXFileReference; indentWidth = 4; lastKnownFileType = sourcecode.swift; path = CardValidatorTest.swift; sourceTree = "<group>"; tabWidth = 4; };
 /* End PBXFileReference section */
 

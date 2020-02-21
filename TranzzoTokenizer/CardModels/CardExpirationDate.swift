@@ -1,8 +1,8 @@
 /*
-* Copyright (c) TRANZZO LTD - All Rights Reserved
-* Unauthorized copying of this file, via any medium is strictly prohibited
-* Proprietary and confidential
-*/
+ * Copyright (c) TRANZZO LTD - All Rights Reserved
+ * Unauthorized copying of this file, via any medium is strictly prohibited
+ * Proprietary and confidential
+ */
 
 import Foundation
 
@@ -47,17 +47,10 @@ public struct CardExpirationDate: Equatable {
         var year: Int?
         var indexEndMonth: String.Index
         switch filteredDate.count {
-        case 3:
+        case 3, 5:
             indexEndMonth = filteredDate.index(filteredDate.startIndex, offsetBy: 1)
-            
-        case 4...:
+        case 4, 6:
             indexEndMonth = filteredDate.index(filteredDate.startIndex, offsetBy: 2)
-            if let tempMonth = Int(filteredDate[..<indexEndMonth]) {
-                if tempMonth > 12 {
-                    indexEndMonth = filteredDate.index(filteredDate.startIndex, offsetBy: 1)
-                }
-            }
-            
         default:
             throw CardExpirationDateError.stringTooShort
         }
